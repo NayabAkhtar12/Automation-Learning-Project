@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Automation-Projects\\AIChatbot\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\aichatbot\\core\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:core\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\aichatbot\\testclass\\testclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:testclass\\testclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\aichatbot\\pages\\page1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\page1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\aichatbot\\pages\\reusablemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\reusablemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReusableMethods.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\AIChatbot\\Pages\\ReusableMethods.cs",
+              "RelativeDocumentMoniker": "Pages\\ReusableMethods.cs",
+              "ToolTip": "D:\\Automation-Projects\\AIChatbot\\Pages\\ReusableMethods.cs",
+              "RelativeToolTip": "Pages\\ReusableMethods.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T06:40:36.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Page1.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\AIChatbot\\Pages\\Page1.cs",
+              "RelativeDocumentMoniker": "Pages\\Page1.cs",
+              "ToolTip": "D:\\Automation-Projects\\AIChatbot\\Pages\\Page1.cs",
+              "RelativeToolTip": "Pages\\Page1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T09:59:41.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Base.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\AIChatbot\\Core\\Base.cs",
+              "RelativeDocumentMoniker": "Core\\Base.cs",
+              "ToolTip": "D:\\Automation-Projects\\AIChatbot\\Core\\Base.cs",
+              "RelativeToolTip": "Core\\Base.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAUwDkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T09:57:26.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TestClass.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\AIChatbot\\TestClass\\TestClass.cs",
+              "RelativeDocumentMoniker": "TestClass\\TestClass.cs",
+              "ToolTip": "D:\\Automation-Projects\\AIChatbot\\TestClass\\TestClass.cs",
+              "RelativeToolTip": "TestClass\\TestClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T09:55:56.968Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
