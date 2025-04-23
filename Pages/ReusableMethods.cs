@@ -13,7 +13,7 @@ namespace NunitAppiumProj.Pages
 
         public ReusableMethods(AppiumDriver<AndroidElement>? driver)
         {
-            this.driver = driver;
+            this.Driver = driver;
             //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
         }
@@ -29,33 +29,59 @@ namespace NunitAppiumProj.Pages
             // Optionally, you can fail the test if this is called from a test method
             Assert.Fail($"Test failed due to exception: {ex.Message}");
         }
-        public static void Click(IWebDriver driver, IWebElement element, string elementname, ExtentTest? Test)
+        public static void Click(AppiumDriver<AndroidElement> driver, IWebElement element, string elementname, ExtentTest? test)
         {
 
             try
             {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                wait.Until(driver =>
+                if (element.Displayed && element.Enabled)
                 {
-                    try
-                    {
-                        return element.Displayed && element.Enabled;
-                    }
-                    catch
-                    {
-                        return false;
-                    }
-                });
-
-                element?.Click();
-                Test?.Info($"Clicked {elementname}");
+                    element.Click();
+                    test.Log(Status.Pass, $"Clicked: {elementname}");
+                }
+                else
+                {
+                    string message = $"{elementname} is not interactable.";
+                    test.Log(Status.Fail, message);
+                    throw new ElementNotInteractableException(message);
+                }
             }
-            catch (Exception e)
+            catch (NoSuchElementException ex)
             {
-                Console.WriteLine($"Error clicking {elementname}: {e.Message}");
-                Assert.Fail($"Failed to click {elementname}: {e.Message}");
+                string message = $"Element not found: {elementname} - {ex.Message}";
+                test.Log(Status.Fail, message);
+                Assert.IsTrue(false, "Click failed due to missing element.");
+                AttachScreenshot(driver, test);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                string message = $"Error clicking on {elementname}: {ex.Message}";
+                test.Log(Status.Fail, message);
+                Assert.IsTrue(false, "Click failed due to missing element.");
+                AttachScreenshot(driver, test);
+                throw;
+            }
+
+
+        }
+
+        public static void AttachScreenshot(AppiumDriver<AndroidElement> driver, ExtentTest test)
+        {
+            try
+            {
+                string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                string screenshotPath = Path.Combine(Directory.GetCurrentDirectory(), $"Screenshot_{timestamp}.png");
+                Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                screenshot.SaveAsFile(screenshotPath, ScreenshotImageFormat.Png);
+                test.AddScreenCaptureFromPath(screenshotPath);
+            }
+            catch (Exception ex)
+            {
+                test.Log(Status.Warning, $"Failed to capture screenshot: {ex.Message}");
             }
         }
+
         public static void Swipe(AppiumDriver<AndroidElement> driver, int startX, int startY, int endX, int endY)
         {
             try

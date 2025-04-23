@@ -9,27 +9,24 @@ namespace NunitAppiumProj.Core
     [TestFixture]
     public class Base
     {
-        protected AppiumDriver<AndroidElement>? driver;
-        public static ExtentReports Extent;
+        private AppiumDriver<AndroidElement>? driver;
+        protected ExtentReports Extent = new ExtentReports();
         protected ExtentTest? test;
 
-        private static ExtentSparkReporter? _reporter;
+        private ExtentSparkReporter? _reporter;
 
-        //public AppiumDriver<AndroidElement>? Driver
-        //{
-        //    get
-        //    {
-        //        return driver;
-        //    }
-        //}
-        public AppiumDriver<AndroidElement> Driver => driver ?? throw new NullReferenceException("Driver not initialized.");
+        protected AppiumDriver<AndroidElement>? Driver
+        {
+            get => driver;
+            set => driver = value;
+        }
+       // protected AppiumDriver<AndroidElement> Driver => driver ?? throw new NullReferenceException("Driver not initialized.");
 
         [OneTimeSetUp]
-        public void OneTimeSetup()
+        protected void OneTimeSetup()
         {
-            string reportPath = @"D:\Reports\report.html";  // Ensure you are using the correct folder path
+            string reportPath = @"D:\Reports\report.html";  
             _reporter = new ExtentSparkReporter(reportPath);
-            Extent = new ExtentReports();
             Extent.AttachReporter(_reporter);
         }
 
@@ -39,7 +36,7 @@ namespace NunitAppiumProj.Core
         //adb shell pm list packages | findstr holyquran
         //adb shell cmd package resolve-activity --brief<package_name>
 
-        public void Setup()
+        protected void Setup()
         {
             try
             {
@@ -53,35 +50,20 @@ namespace NunitAppiumProj.Core
                 capabilities.AddAdditionalCapability("udid", "ONOZSG4H8HSGW8HY"); // Match your device UDID
                 capabilities.AddAdditionalCapability("appPackage", "com.seaofgames.aichat.aiapps"); // Match your app's package
                 capabilities.AddAdditionalCapability("appActivity", ".ui.activities.SplashActivity"); // Match your app's activity
-
-                // Ensure that the automationName is properly set
                 capabilities.AddAdditionalCapability("appium:automationName", AutomationName.AndroidUIAutomator2);
-
-                // Additional capabilities for stability and testing
                // capabilities.AddAdditionalCapability("noReset", true);
                 capabilities.AddAdditionalCapability("newCommandTimeout", 300);
-                capabilities.AddAdditionalCapability("ignoreHiddenApiPolicyError", true); // Must-have for API errors
-                capabilities.AddAdditionalCapability("disableWindowAnimation", true); // Prevent UI flakiness
+                capabilities.AddAdditionalCapability("ignoreHiddenApiPolicyError", true); 
+                capabilities.AddAdditionalCapability("disableWindowAnimation", true); 
                 capabilities.AddAdditionalCapability("autoGrantPermissions", true);
-
-                // Define Appium server URI
-                string appiumUri = "http://192.168.100.42:4723/"; // Default local Appium server
-             //   Uri serverUri = new Uri(appiumUri);
-
-                // Initialize driver
+                string appiumUri = "http://192.168.100.42:4723/"; 
                 driver = new AndroidDriver<AndroidElement>(new Uri(appiumUri), capabilities, TimeSpan.FromSeconds(180));
-
-                // Set implicit wait time
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
-              //  driver?.LaunchApp();
-
                 Console.WriteLine("Driver initialized successfully.");
             }
             catch (Exception e)
             {
                 Console.WriteLine($"Error during driver initialization: {e.Message}");
-                HandleException1(e, "Failed to initialize driver in Setup");
             }
         }
 
@@ -97,7 +79,7 @@ namespace NunitAppiumProj.Core
         }
 
         [TearDown]
-        public void TearDown()
+        protected void TearDown()
         {
             try
             {
@@ -114,7 +96,7 @@ namespace NunitAppiumProj.Core
         }
 
         [OneTimeTearDown]
-        public void OneTimeTearDown()
+        protected void OneTimeTearDown()
         {
             Extent.Flush();
         }
