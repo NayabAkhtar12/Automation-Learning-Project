@@ -1,10 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using NunitAppiumProj.Core;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.MultiTouch;
-using OpenQA.Selenium.Support.UI;
 
 namespace NunitAppiumProj.Pages
 {
@@ -12,9 +9,9 @@ namespace NunitAppiumProj.Pages
     {
        ReusableMethods R;
 
-        public QiblaFinder(AppiumDriver<AndroidElement> driver, ExtentTest test)
+        public QiblaFinder(AndroidDriver driver, ExtentTest test)
         {
-            this.Driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             this.test = test ?? throw new ArgumentNullException(nameof(test));
             R=new ReusableMethods(driver);
         }
@@ -22,19 +19,21 @@ namespace NunitAppiumProj.Pages
 
         public void QiblaFinderT()
         {
-            ReusableMethods.Click(Driver!, QiblaFindermenu!, "Menu from Home Screen", test);
-            ReusableMethods.Click(Driver!, SelectCompassMenu!, "SelectCompassMenu", test);
-            ReusableMethods.Click(Driver!, Theme!, "Theme", test);
+            ReusableMethods.Click(driver!, QiblaFindermenu!, "Menu from Home Screen", test);
+            ReusableMethods.Click(driver!, SelectCompassMenu!, "SelectCompassMenu", test);
+            ReusableMethods.Click(driver!, Theme!, "Theme", test);
             Thread.Sleep(2000);
-            Driver!.Navigate().Back();
+            driver!.Navigate().Back();
             //Driver!.Navigate().Back();
 
         }
 
         //Element Locator for Surah Location
-      
-        IWebElement? QiblaFindermenu => Driver?.FindElementById("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivqibla");
-        IWebElement? SelectCompassMenu => Driver?.FindElementById("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivChangeTasbeeh");
-        IWebElement? Theme => Driver?.FindElementById("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/clqibla3");
+
+        IWebElement? QiblaFindermenu => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivqibla"));
+
+        IWebElement? SelectCompassMenu => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivChangeTasbeeh"));
+
+        IWebElement? Theme => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/clqibla3"));
     }
 }

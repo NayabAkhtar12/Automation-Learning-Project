@@ -1,10 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using NunitAppiumProj.Core;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.MultiTouch;
-using OpenQA.Selenium.Support.UI;
 
 namespace NunitAppiumProj.Pages
 {
@@ -12,9 +9,9 @@ namespace NunitAppiumProj.Pages
     {
        ReusableMethods R;
 
-        public ALQuran(AppiumDriver<AndroidElement> driver, ExtentTest test)
+        public ALQuran(AndroidDriver driver, ExtentTest test)
         {
-            this.Driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             this.test = test ?? throw new ArgumentNullException(nameof(test));
             R=new ReusableMethods(driver);
         }
@@ -27,31 +24,32 @@ namespace NunitAppiumProj.Pages
 
             try
             {
-                ReusableMethods.Click(Driver!, ALQuranMenu!, "Menu from Home Screen", test);
-                ReusableMethods.Click(Driver!, AlFatiha!, "Surah Al-Fatiha", test);
+                ReusableMethods.Click(driver!, ALQuranMenu!, "Menu from Home Screen", test);
+                ReusableMethods.Click(driver!, AlFatiha!, "Surah Al-Fatiha", test);
                 Thread.Sleep(1000);
-                Driver!.Navigate().Back();
+                driver!.Navigate().Back();
                 Thread.Sleep(1000);
-                ReusableMethods.Click(Driver, Surah2!, "Surah 2", test);
-                Driver.Navigate().Back();
+                ReusableMethods.Click(driver, Surah2!, "Surah 2", test);
+                driver.Navigate().Back();
             }
             catch (Exception ex)
             {
                 //test.Log(Status.Fail, $"Test failed in QuranMajeedModule: {ex.Message}");
-                ReusableMethods.HandleException(Driver,test,"Al Quran",ex);
+                ReusableMethods.HandleException(driver,test,"Al Quran",ex);
                     throw;
             }
 
         }
-    
 
-   
+
+
 
         //Element Locator for Surah Location
-        IWebElement? ALQuranMenu => Driver?.FindElementById("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivquran");
+        IWebElement? ALQuranMenu => driver.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivquran"));
+
         //Web Elements
-        IWebElement? AlFatiha => Driver?.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName\" and @text=\"Surat Al-Fatiha\"]");
-        IWebElement? PlaySurah => Driver?.FindElementById("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/play");
-        IWebElement? Surah2 => Driver?.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName\" and @text=\"Surat Al-Baqara\"]");
+        IWebElement? AlFatiha => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id='com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName' and @text='Surat Al-Fatiha']"));
+        IWebElement? PlaySurah => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/play"));
+        IWebElement? Surah2 => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id='com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName' and @text='Surat Al-Baqara']"));
     }
 }

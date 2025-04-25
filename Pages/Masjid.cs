@@ -1,10 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using NunitAppiumProj.Core;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.MultiTouch;
-using OpenQA.Selenium.Support.UI;
 
 namespace NunitAppiumProj.Pages
 {
@@ -12,24 +9,24 @@ namespace NunitAppiumProj.Pages
     {
        ReusableMethods R;
 
-        public Masjid(AppiumDriver<AndroidElement> driver, ExtentTest test)
+        public Masjid(AndroidDriver driver, ExtentTest test)
         {
-            this.Driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             this.test = test ?? throw new ArgumentNullException(nameof(test));
             R=new ReusableMethods(driver);
         }
 
         public void MasjidTest()
         {
-            ReusableMethods.Click(Driver!, masjidFinderMenu!, " masjidFinderMenu", test);
+            ReusableMethods.Click(driver!, masjidFinderMenu!, " masjidFinderMenu", test);
             Thread.Sleep(5000);
-            Driver!.Navigate().Back();
+            driver!.Navigate().Back();
         }
 
         //Element Locators
 
 
-        IWebElement masjidFinderMenu => Driver.FindElementById("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmasjid");
+        IWebElement masjidFinderMenu => driver.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmasjid"));
 
     }
 }

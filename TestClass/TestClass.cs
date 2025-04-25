@@ -30,7 +30,7 @@ namespace NunitAppiumProj.TestClass
         {
             test = Extent.CreateTest("Quran Majeed Module Report");
                 test.Log(Status.Info, "Starting Quran Majeed Test Case");
-                ALQuran = new ALQuran(Driver!, test);
+                ALQuran = new ALQuran(driver!, test);
                 ALQuran.QuranMajeedModule();
           
         }
@@ -43,7 +43,7 @@ namespace NunitAppiumProj.TestClass
             {
                 test.Log(Status.Info, "Starting QiblaFinder Test Case");
 
-                QF = new QiblaFinder(Driver!, test);
+                QF = new QiblaFinder(driver!, test);
                 QF.QiblaFinderT();
                 test.Log(Status.Info, "Completed QiblaFinder Test Case");
             }
@@ -64,8 +64,11 @@ namespace NunitAppiumProj.TestClass
             try
             {
                 test.Log(Status.Info, "Starting DigitalTasbeeh Test Case");
-
-                DT = new DigitalTasbeeh(Driver!, test);
+                if (driver == null)
+                {
+                    throw new InvalidOperationException("Driver is not initialized.");
+                }
+                DT = new DigitalTasbeeh(driver!, test);
                 DT.DigitalTasbeehT();
             }
             catch (Exception e)
@@ -84,7 +87,7 @@ namespace NunitAppiumProj.TestClass
             {
                 test.Log(Status.Info, "Starting DigitalTasbeeh Test Case");
 
-                Azkar = new Azkar(Driver!, test);
+                Azkar = new Azkar(driver!, test);
                 Azkar.AzkarTest();
             }
             catch (Exception e)
@@ -101,7 +104,7 @@ namespace NunitAppiumProj.TestClass
             try
             {
                 test.Log(Status.Info, "Starting Prayer Times");
-                PrayerTimes = new PrayerTimes(Driver, test);
+                PrayerTimes = new PrayerTimes(driver, test);
                 PrayerTimes.PrayerTimesTest();
                 test.Log(Status.Info, "Completed Prayer Times");
             }
@@ -120,7 +123,7 @@ namespace NunitAppiumProj.TestClass
             try
             {
                 test.Log(Status.Info, "Starting Hijri Calender");
-                Hijrical = new HijriCalender(Driver, test);
+                Hijrical = new HijriCalender(driver, test);
                 Hijrical.CalenderTest();
                 test.Log(Status.Info, "Completed Hijri calender");
             }
@@ -140,7 +143,7 @@ namespace NunitAppiumProj.TestClass
             {
                 test.Log(Status.Info, "Starting Hajj and Umrah Section Test");
 
-                var hajjUmrah = new HajjandUmrahSection(Driver, test);
+                var hajjUmrah = new HajjandUmrahSection(driver, test);
 
                 test.Log(Status.Info, "Executing Hajj Section Test");
                 hajjUmrah.HajjSectionTest();
@@ -175,7 +178,7 @@ namespace NunitAppiumProj.TestClass
             try
             {
                 test.Log(Status.Info, "Starting Masjid Finder");
-                MasjidF = new Masjid(Driver, test);
+                MasjidF = new Masjid(driver, test);
                 MasjidF.MasjidTest();
                 test.Log(Status.Info, "Completed Masjid Finder");
             }
@@ -194,7 +197,7 @@ namespace NunitAppiumProj.TestClass
             try
             {
                 test.Log(Status.Info, "Starting Names Section Test");
-               var  namesSection = new Names99((AndroidDriver<AndroidElement>)Driver!, test);
+               var  namesSection = new Names99((AndroidDriver)driver!, test);
                 namesSection.NamesSectionTest();
                 test.Log(Status.Pass, "Completed Names Section Test Successfully");
             }

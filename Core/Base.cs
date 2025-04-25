@@ -10,13 +10,13 @@ namespace NunitAppiumProj.Core
     [TestFixture]
     public class Base
     {
-        private AppiumDriver<AndroidElement>? driver;
+        public AndroidDriver? driver;
         protected ExtentReports Extent = new ExtentReports();
         protected ExtentTest? test;
 
         private ExtentSparkReporter? _reporter;
 
-        protected AppiumDriver<AndroidElement>? Driver
+        protected AndroidDriver? Driver
         {
             get => driver;
             set => driver = value;
@@ -44,21 +44,27 @@ namespace NunitAppiumProj.Core
                 // Initialize Appium Options
                 AppiumOptions capabilities = new AppiumOptions();
 
-                //required capabilities
-                capabilities.AddAdditionalCapability("platformName", "Android");
-                capabilities.AddAdditionalCapability("platformVersion", "11"); // Match your actual Android version
-                capabilities.AddAdditionalCapability("deviceName", "OPPO A16"); // Match your device name
-                capabilities.AddAdditionalCapability("udid", "ONOZSG4H8HSGW8HY"); // Match your device UDID
-                capabilities.AddAdditionalCapability("appPackage", "com.seaofgames.aichat.aiapps"); // Match your app's package
-                capabilities.AddAdditionalCapability("appActivity", ".ui.activities.SplashActivity"); // Match your app's activity
-                capabilities.AddAdditionalCapability("appium:automationName", AutomationName.AndroidUIAutomator2);
-               // capabilities.AddAdditionalCapability("noReset", true);
-                capabilities.AddAdditionalCapability("newCommandTimeout", 300);
-                capabilities.AddAdditionalCapability("ignoreHiddenApiPolicyError", true); 
-                capabilities.AddAdditionalCapability("disableWindowAnimation", true); 
-                capabilities.AddAdditionalCapability("autoGrantPermissions", true);
-                string appiumUri = "http://192.168.100.42:4723/"; 
-                driver = new AndroidDriver<AndroidElement>(new Uri(appiumUri), capabilities, TimeSpan.FromSeconds(180));
+                capabilities.PlatformName = "Android"; // Direct property for PlatformName
+                capabilities.PlatformVersion = "11";   // Direct property for PlatformVersion
+                capabilities.DeviceName = "OPPO A16";  // Direct property for DeviceName
+                capabilities.AutomationName = AutomationName.AndroidUIAutomator2; // Direct property for AutomationName
+
+                // Use AddAdditionalAppiumOption for additional options
+                capabilities.AddAdditionalAppiumOption("appActivity", ".ui.activities.SplashActivity");
+                capabilities.AddAdditionalAppiumOption("appPackage", "com.seaofgames.aichat.aiapps");
+                capabilities.AddAdditionalAppiumOption("udid", "ONOZSG4H8HSGW8HY");
+                capabilities.AddAdditionalAppiumOption("newCommandTimeout", 300);
+                capabilities.AddAdditionalAppiumOption("ignoreHiddenApiPolicyError", true);
+                capabilities.AddAdditionalAppiumOption("disableWindowAnimation", true);
+                capabilities.AddAdditionalAppiumOption("autoGrantPermissions", true);
+
+
+                string appiumUri = "http://192.168.100.42:4723/";
+                driver = new AndroidDriver(new Uri(appiumUri), capabilities, TimeSpan.FromSeconds(180));
+                if (driver == null)
+                {
+                    throw new InvalidOperationException("Appium driver is null. Initialization failed.");
+                }
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                 Console.WriteLine("Driver initialized successfully.");
             }
@@ -88,7 +94,7 @@ namespace NunitAppiumProj.Core
                 {
                     if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
                     {
-                        ReusableMethods.AttachScreenshot(Driver, test);
+                        ReusableMethods.AttachScreenshot(driver, test);
                     }
 
                     driver.Quit();
