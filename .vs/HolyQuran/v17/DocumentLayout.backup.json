@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\testclass\\testclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:testclass\\testclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\alquran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\alquran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,13 +34,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ALQuran.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\ALQuran.cs",
+              "RelativeDocumentMoniker": "Pages\\ALQuran.cs",
+              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\ALQuran.cs",
+              "RelativeToolTip": "Pages\\ALQuran.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAjwBoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T11:53:35.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "TestClass.cs",
               "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\TestClass\\TestClass.cs",
               "RelativeDocumentMoniker": "TestClass\\TestClass.cs",
               "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\TestClass\\TestClass.cs",
               "RelativeToolTip": "TestClass\\TestClass.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAADwv04AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T11:11:54.131Z",
               "EditorCaption": ""
@@ -49,7 +66,7 @@
               "RelativeDocumentMoniker": "Core\\Base.cs",
               "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Core\\Base.cs",
               "RelativeToolTip": "Core\\Base.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAcwGYAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAUwHMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T11:07:45.943Z",
               "EditorCaption": ""

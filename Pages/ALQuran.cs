@@ -24,6 +24,9 @@ namespace NunitAppiumProj.Pages
 
             try
             {
+                ReusableMethods.Click(driver!, Continue!, "Continue from splash Screen", test);
+                Thread.Sleep(1000);
+
                 ReusableMethods.Click(driver!, ALQuranMenu!, "Menu from Home Screen", test);
                 ReusableMethods.Click(driver!, AlFatiha!, "Surah Al-Fatiha", test);
                 Thread.Sleep(1000);
@@ -51,5 +54,8 @@ namespace NunitAppiumProj.Pages
         IWebElement? AlFatiha => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id='com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName' and @text='Surat Al-Fatiha']"));
         IWebElement? PlaySurah => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/play"));
         IWebElement? Surah2 => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id='com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName' and @text='Surat Al-Baqara']"));
+        IWebElement? Continue => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/start_button"));
+
+
     }
 }

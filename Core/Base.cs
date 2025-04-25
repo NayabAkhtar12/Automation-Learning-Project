@@ -50,8 +50,8 @@ namespace NunitAppiumProj.Core
                 capabilities.AutomationName = AutomationName.AndroidUIAutomator2; // Direct property for AutomationName
 
                 // Use AddAdditionalAppiumOption for additional options
-                capabilities.AddAdditionalAppiumOption("appActivity", ".ui.activities.SplashActivity");
-                capabilities.AddAdditionalAppiumOption("appPackage", "com.seaofgames.aichat.aiapps");
+           //     capabilities.AddAdditionalAppiumOption("appPackage", "com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim");
+          //      capabilities.AddAdditionalAppiumOption("appActivity", "com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim/.ui.core.splash.SplashActivity");
                 capabilities.AddAdditionalAppiumOption("udid", "ONOZSG4H8HSGW8HY");
                 capabilities.AddAdditionalAppiumOption("newCommandTimeout", 300);
                 capabilities.AddAdditionalAppiumOption("ignoreHiddenApiPolicyError", true);
