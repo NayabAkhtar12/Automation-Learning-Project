@@ -97,7 +97,9 @@ namespace NunitAppiumProj.Core
                         ReusableMethods.AttachScreenshot(driver, test);
                     }
 
+              
                     driver.Quit();
+                    driver.Dispose();
                 }
             }
             catch (Exception e)
