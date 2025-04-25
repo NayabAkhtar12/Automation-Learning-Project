@@ -18,42 +18,28 @@ namespace NunitAppiumProj.Pages
 
         }
 
+        //public static void HandleException(Exception ex, string context)
+        //{
+        //    // Log the exception message and stack trace
+        //    Console.WriteLine($"Exception occurred: {context}");
+        //    Console.WriteLine($"Message: {ex.Message}");
+        //    Console.WriteLine($"StackTrace: {ex.StackTrace}");
 
-        public static void HandleException(Exception ex, string context)
-        {
-            // Log the exception message and stack trace
-            Console.WriteLine($"Exception occurred: {context}");
-            Console.WriteLine($"Message: {ex.Message}");
-            Console.WriteLine($"StackTrace: {ex.StackTrace}");
-
-            // Optionally, you can fail the test if this is called from a test method
-            Assert.Fail($"Test failed due to exception: {ex.Message}");
-        }
+        //    // Optionally, you can fail the test if this is called from a test method
+        //    Assert.Fail($"Test failed due to exception: {ex.Message}");
+        //}
         public static void Click(AppiumDriver<AndroidElement> driver, IWebElement element, string elementname, ExtentTest? test)
         {
-
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             try
             {
-                if (element.Displayed && element.Enabled)
-                {
-                    element.Click();
-                    test.Log(Status.Pass, $"Clicked: {elementname}");
-                }
-                else
-                {
-                    string message = $"{elementname} is not interactable.";
-                    test.Log(Status.Fail, message);
-                    throw new ElementNotInteractableException(message);
-                }
+                wait.Until(drv => element.Displayed && element.Enabled);
+
+
+                element.Click();
+                test.Log(Status.Pass, $"Clicked: {elementname}");
             }
-            catch (NoSuchElementException ex)
-            {
-                string message = $"Element not found: {elementname} - {ex.Message}";
-                test.Log(Status.Fail, message);
-                Assert.IsTrue(false, "Click failed due to missing element.");
-                AttachScreenshot(driver, test);
-                throw;
-            }
+      
             catch (Exception ex)
             {
                 string message = $"Error clicking on {elementname}: {ex.Message}";
@@ -64,6 +50,27 @@ namespace NunitAppiumProj.Pages
             }
 
 
+        }
+
+        public static void HandleException(AppiumDriver<AndroidElement> driver, ExtentTest? test, string actionName, Exception ex)
+        {
+            test?.Log(Status.Fail, $"Test failed during: {actionName}. Exception: {ex.Message}");
+            Assert.IsTrue(false, "Click failed due to missing element.");
+            try
+            {
+                Screenshot screenshot = driver.GetScreenshot();
+                string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+                string filePath = @$"D:\Reports\screenshot_{timestamp}.png";
+
+                screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Png);
+                Console.WriteLine($"Screenshot saved to: {filePath}");
+
+                test?.AddScreenCaptureFromPath(filePath);
+            }
+            catch (Exception screenshotException)
+            {
+                test?.Log(Status.Warning, $"Failed to capture screenshot: {screenshotException.Message}");
+            }
         }
 
         public static void AttachScreenshot(AppiumDriver<AndroidElement> driver, ExtentTest test)
@@ -105,6 +112,5 @@ namespace NunitAppiumProj.Pages
             }
         }
 
-
-    }
+}
 }

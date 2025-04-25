@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NunitAppiumProj")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dbf506a89fc3f348cce6fc45138538630d0b990")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f898aa30607e4e8173cd629efcfee2838d8d7cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("NunitAppiumProj")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NunitAppiumProj")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

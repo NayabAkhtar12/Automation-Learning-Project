@@ -29,21 +29,10 @@ namespace NunitAppiumProj.TestClass
         public void ALQuran_1()
         {
             test = Extent.CreateTest("Quran Majeed Module Report");
-
-            try
-            {
                 test.Log(Status.Info, "Starting Quran Majeed Test Case");
-
                 ALQuran = new ALQuran(Driver!, test);
                 ALQuran.QuranMajeedModule();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Exception occured in Test case 1{e}");
-                test.Log(Status.Fail, $"Failed :  Exception: {e.Message}");
-
-                throw;
-            }
+          
         }
         [Test, Order(2)]
         public void QiblaFinder_2()

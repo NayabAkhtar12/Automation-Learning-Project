@@ -1,5 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
+using NunitAppiumProj.Pages;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
@@ -85,6 +86,11 @@ namespace NunitAppiumProj.Core
             {
                 if (driver != null)
                 {
+                    if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
+                    {
+                        ReusableMethods.AttachScreenshot(Driver, test);
+                    }
+
                     driver.Quit();
                 }
             }

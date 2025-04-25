@@ -252,12 +252,6 @@ D:\Automation-Projects\AIChatbot\obj\Debug\net8.0\refint\NunitAppiumProj.dll
 D:\Automation-Projects\AIChatbot\obj\Debug\net8.0\NunitAppiumProj.pdb
 D:\Automation-Projects\AIChatbot\obj\Debug\net8.0\NunitAppiumProj.genruntimeconfig.cache
 D:\Automation-Projects\AIChatbot\obj\Debug\net8.0\ref\NunitAppiumProj.dll
-D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.csproj.AssemblyReference.cache
-D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.GeneratedMSBuildEditorConfig.editorconfig
-D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.AssemblyInfoInputs.cache
-D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.AssemblyInfo.cs
-D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.csproj.CoreCompileInputs.cache
-D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.sourcelink.json
 D:\Automation-Projects\PracticeApplication\bin\Debug\net8.0\testhost.dll
 D:\Automation-Projects\PracticeApplication\bin\Debug\net8.0\testhost.exe
 D:\Automation-Projects\PracticeApplication\bin\Debug\net8.0\NUnit3.TestAdapter.dll
@@ -391,6 +385,12 @@ D:\Automation-Projects\PracticeApplication\bin\Debug\net8.0\runtimes\win\lib\net
 D:\Automation-Projects\PracticeApplication\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Automation-Projects\PracticeApplication\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Automation-Projects\PracticeApplication\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.csproj.AssemblyReference.cache
+D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.GeneratedMSBuildEditorConfig.editorconfig
+D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.AssemblyInfoInputs.cache
+D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.AssemblyInfo.cs
+D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.csproj.CoreCompileInputs.cache
+D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.sourcelink.json
 D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitApp.483358B1.Up2Date
 D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\NunitAppiumProj.dll
 D:\Automation-Projects\PracticeApplication\obj\Debug\net8.0\refint\NunitAppiumProj.dll

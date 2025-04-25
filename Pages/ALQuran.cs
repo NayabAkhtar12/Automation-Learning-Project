@@ -24,13 +24,23 @@ namespace NunitAppiumProj.Pages
         public void QuranMajeedModule()
         {
             //  ReusableMethods.SplashHandling2ndsessiont();
-            ReusableMethods.Click(Driver!, ALQuranMenu!, "Menu from Home Screen", test); 
-            ReusableMethods.Click(Driver!, AlFatiha!, "Surah Al-Fatiha", test);
-            Thread.Sleep(1000);
-            Driver!.Navigate().Back();
-            Thread.Sleep(1000);
-            ReusableMethods.Click(Driver, Surah2!, "Surah 2", test);
-            Driver.Navigate().Back();
+
+            try
+            {
+                ReusableMethods.Click(Driver!, ALQuranMenu!, "Menu from Home Screen", test);
+                ReusableMethods.Click(Driver!, AlFatiha!, "Surah Al-Fatiha", test);
+                Thread.Sleep(1000);
+                Driver!.Navigate().Back();
+                Thread.Sleep(1000);
+                ReusableMethods.Click(Driver, Surah2!, "Surah 2", test);
+                Driver.Navigate().Back();
+            }
+            catch (Exception ex)
+            {
+                //test.Log(Status.Fail, $"Test failed in QuranMajeedModule: {ex.Message}");
+                ReusableMethods.HandleException(Driver,test,"Al Quran",ex);
+                    throw;
+            }
 
         }
     
