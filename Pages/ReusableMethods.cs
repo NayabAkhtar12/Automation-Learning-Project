@@ -26,6 +26,30 @@ namespace NunitAppiumProj.Pages
         //    // Optionally, you can fail the test if this is called from a test method
         //    Assert.Fail($"Test failed due to exception: {ex.Message}");
         //}
+
+
+        public static void Click1(AndroidDriver driver, IWebElement element, string elementname, ExtentTest? test, SoftAssert softAssert)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            try
+            {
+                wait.Until(drv => element.Displayed && element.Enabled);
+
+                element.Click();
+                test.Log(Status.Pass, $"Clicked: {elementname}");
+            }
+            catch (Exception ex)
+            {
+                string message = $"Error clicking on {elementname}: {ex.Message}";
+                test.Log(Status.Fail, message);
+                softAssert.IsTrue(false, message);
+                ReusableMethods.AttachScreenshot(driver, test);
+            }
+        }
+
+
+
+
         public static void Click(AndroidDriver driver, IWebElement element, string elementname, ExtentTest? test)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -42,11 +66,12 @@ namespace NunitAppiumProj.Pages
             {
                 string message = $"Error clicking on {elementname}: {ex.Message}";
                 test.Log(Status.Fail, message);
+                Assert.That(element.Displayed, "Not displayed");
                 Assert.That(false, "Click failed due to missing element.");
                 AttachScreenshot(driver, test);
                 throw;
             }
-
+            
 
         }
 

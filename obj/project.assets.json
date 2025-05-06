@@ -2856,7 +2856,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nayab\\.nuget\\packages\\": {},
+    "C:\\Users\\Nayab Akhtar\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -2865,14 +2865,14 @@
       "projectUniqueName": "D:\\Automation-Projects\\PracticeApplication\\NunitAppiumProj.csproj",
       "projectName": "NunitAppiumProj",
       "projectPath": "D:\\Automation-Projects\\PracticeApplication\\NunitAppiumProj.csproj",
-      "packagesPath": "C:\\Users\\nayab\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Nayab Akhtar\\.nuget\\packages\\",
       "outputPath": "D:\\Automation-Projects\\PracticeApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nayab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nayab Akhtar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2898,9 +2898,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -2955,7 +2955,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -17,8 +17,37 @@ namespace NunitAppiumProj.Pages
         }
 
 
-        //Method to perform action on Surah 1 using Locators
         public void QuranMajeedModule()
+        {
+            SoftAssert softAssert = new SoftAssert();
+
+            try
+            {
+                ReusableMethods.Click1(driver!, Continue!, "Continue from splash Screen", test, softAssert);
+                Thread.Sleep(1000);
+
+                ReusableMethods.Click1(driver!, ALQuranMenu!, "Menu from Home Screen", test, softAssert);
+                ReusableMethods.Click1(driver!, AlFatiha!, "Surah Al-Fatiha", test, softAssert);
+                Thread.Sleep(1000);
+                driver!.Navigate().Back();
+                Thread.Sleep(1000);
+                ReusableMethods.Click1(driver, Surah2!, "Surah 2", test, softAssert);
+                Thread.Sleep(2000);
+                driver.Navigate().Back();
+                driver.Navigate().Back();
+            }
+            catch (Exception ex)
+            {
+                ReusableMethods.HandleException(driver, test, "Al Quran", ex);
+                throw;
+            }
+            finally
+            {
+                softAssert.AllAsserts(test); 
+            }
+        }
+
+        public void QuranMajeedModule1()
         {
             //  ReusableMethods.SplashHandling2ndsessiont();
 
@@ -33,7 +62,11 @@ namespace NunitAppiumProj.Pages
                 driver!.Navigate().Back();
                 Thread.Sleep(1000);
                 ReusableMethods.Click(driver, Surah2!, "Surah 2", test);
+                Thread.Sleep(2000);
                 driver.Navigate().Back();
+                driver.Navigate().Back();
+
+              
             }
             catch (Exception ex)
             {
