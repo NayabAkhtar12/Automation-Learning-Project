@@ -12,7 +12,7 @@ namespace NunitAppiumProj.Core
     {
         public AndroidDriver? driver;
         protected ExtentReports Extent = new ExtentReports();
-        protected ExtentTest? test;
+        protected static ExtentTest? test;
 
         private ExtentSparkReporter? _reporter;
 
@@ -26,6 +26,7 @@ namespace NunitAppiumProj.Core
         [OneTimeSetUp]
         protected void OneTimeSetup()
         {
+            test = Extent.CreateTest(TestContext.CurrentContext.Test.Name);
             string reportPath = @"D:\Reports\report.html";  
             _reporter = new ExtentSparkReporter(reportPath);
             Extent.AttachReporter(_reporter);
@@ -46,13 +47,13 @@ namespace NunitAppiumProj.Core
 
                 capabilities.PlatformName = "Android"; // Direct property for PlatformName
                 capabilities.PlatformVersion = "11";   // Direct property for PlatformVersion
-                capabilities.DeviceName = "OPPO A16";  // Direct property for DeviceName
+                capabilities.DeviceName = "Tecno Spark 7";  // Direct property for DeviceName
                 capabilities.AutomationName = AutomationName.AndroidUIAutomator2; // Direct property for AutomationName
 
                 // Use AddAdditionalAppiumOption for additional options
            //     capabilities.AddAdditionalAppiumOption("appPackage", "com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim");
           //      capabilities.AddAdditionalAppiumOption("appActivity", "com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim/.ui.core.splash.SplashActivity");
-                capabilities.AddAdditionalAppiumOption("udid", "ONOZSG4H8HSGW8HY");
+                capabilities.AddAdditionalAppiumOption("udid", "069793717K109606");  //ONOZSG4H8HSGW8HY
                 capabilities.AddAdditionalAppiumOption("newCommandTimeout", 300);
                 capabilities.AddAdditionalAppiumOption("ignoreHiddenApiPolicyError", true);
                 capabilities.AddAdditionalAppiumOption("disableWindowAnimation", true);
@@ -84,6 +85,54 @@ namespace NunitAppiumProj.Core
             Console.WriteLine($"StackTrace: {ex.StackTrace}");
             Assert.Fail($"Test failed due to exception: {ex.Message}");
         }
+
+        public void RunTest(string testName, Action testSteps)
+        {
+            test = Extent.CreateTest(testName);
+            try
+            {
+                test.Log(Status.Info, $"Starting {testName}");
+                testSteps(); // Run your test logic here
+                test.Log(Status.Pass, $"{testName} completed successfully.");
+            }
+            catch (AssertionException ex)
+            {
+                test.Fail("Assertion failed: " + ex.Message);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                test.Fail("Unexpected error: " + ex.Message);
+                throw;
+            }
+        }
+
+
+        //public void RunWithReporting(string testName, Action<SoftAssert> testSteps)
+        //{
+        //    SoftAssert softAssert = new SoftAssert();
+        //    try
+        //    {
+        //        test.Log(Status.Info, $"Starting {testName}");
+        //        testSteps(softAssert); // Run actual test steps
+        //        test.Log(Status.Pass, $"{testName} completed successfully.");
+        //    }
+        //    catch (AssertionException ex)
+        //    {
+        //        test.Fail("Assertion failed: " + ex.Message);
+        //        throw;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        test.Fail("Unexpected error: " + ex.Message);
+        //        throw;
+        //    }
+        //    finally
+        //    {
+        //        softAssert.AllAsserts(test); // Report soft assertion results
+        //    }
+        //}
+
 
         [TearDown]
         protected void TearDown()

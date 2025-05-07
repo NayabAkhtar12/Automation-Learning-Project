@@ -2,58 +2,60 @@
 using NunitAppiumProj.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
+using System.Threading;
 
 namespace NunitAppiumProj.Pages
 {
     public class Names99 : Base
     {
-       ReusableMethods R;
-
         public Names99(AndroidDriver driver, ExtentTest test)
         {
             this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
-            this.test = test ?? throw new ArgumentNullException(nameof(test));
-            R=new ReusableMethods(driver);
+            Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
         public void NamesSectionTest()
         {
-            ReusableMethods.Click(driver!, Namesnine, "Names Section Menu", test);
+            SoftAssert softAssert = new SoftAssert();
+
+            // Test flow using reusable methods
+            ReusableMethods.Click1(driver!, Namesnine!, "Names Section Menu", test, softAssert);
 
             // Read Allah Names
-            ReusableMethods.Click(driver!, ReadNamesAllah, "Read Names of Allah", test);
+            ReusableMethods.Click1(driver!, ReadNamesAllah!, "Read Names of Allah", test, softAssert);
             Thread.Sleep(2000);
             driver!.Navigate().Back();
 
             // Listen Allah Names
-            ReusableMethods.Click(driver!, ListenNamesAllah, "Listen Names of Allah", test);
-            ReusableMethods.Click(driver!, Nameplay, "Play Button for Allah Names", test);
+            ReusableMethods.Click1(driver!, ListenNamesAllah!, "Listen Names of Allah", test, softAssert);
+            ReusableMethods.Click1(driver!, Nameplay!, "Play Button for Allah Names", test, softAssert);
             Thread.Sleep(2000);
             driver!.Navigate().Back();
 
             // Read Prophet Names
-            ReusableMethods.Click(driver!, ReadNamesHusna, "Read Names of Prophet", test);
+            ReusableMethods.Click1(driver!, ReadNamesHusna!, "Read Names of Prophet", test, softAssert);
             Thread.Sleep(2000);
             driver!.Navigate().Back();
 
             // Listen Prophet Names
-            ReusableMethods.Click(driver!, ListenNamesNabi, "Listen Names of Prophet", test);
-            ReusableMethods.Click(driver!, Nameplay, "Play Button for Prophet Names", test);
+            ReusableMethods.Click1(driver!, ListenNamesNabi!, "Listen Names of Prophet", test, softAssert);
+            ReusableMethods.Click1(driver!, Nameplay!, "Play Button for Prophet Names", test, softAssert);
             Thread.Sleep(2000);
-            driver!.Navigate().Back();          
             driver!.Navigate().Back();
+
+            // Final back navigation to go to the main screen
+            driver!.Navigate().Back();
+
+            softAssert.AllAsserts(test);
         }
 
-
-        //Element Locators
-
-
-        IWebElement? Namesnine => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivnamesnabi"));
-        IWebElement? ReadNamesHusna => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_read_nabi_names"));
-        IWebElement? ListenNamesNabi => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_listen_nabi_names"));
-        IWebElement? ReadNamesAllah => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_read_asma"));
-        IWebElement? ListenNamesAllah => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_listen_asma"));
-        IWebElement? Nameplay => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivPP"));
-        IWebElement? Continue => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/StartButton"));
+        // Element Locators
+        private By Namesnine => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivnamesnabi");
+        private By ReadNamesHusna => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_read_nabi_names");
+        private By ListenNamesNabi => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_listen_nabi_names");
+        private By ReadNamesAllah => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_read_asma");
+        private By ListenNamesAllah => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_listen_asma");
+        private By Nameplay => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivPP");
+        private By Continue => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/StartButton");
     }
 }

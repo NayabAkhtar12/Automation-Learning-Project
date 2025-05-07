@@ -12,15 +12,15 @@ public class SoftAssert
         }
     }
 
-    public void AllAsserts(ExtentTest test)
+    public void AllAsserts(ExtentTest? test = null)
     {
-        if (_errors.Any())
+        if (_errors.Count > 0)
         {
-            foreach (var error in _errors)
-            {
-                test.Log(Status.Fail, error);
-            }
-            Assert.Fail("Soft assertion(s) failed. See above for details.");
+            Assert.Fail("Soft assertion(s) failed:\n" + string.Join("\n", _errors));
+        }
+        else
+        {
+            test?.Log(Status.Pass, "All soft assertions passed.");
         }
     }
 }

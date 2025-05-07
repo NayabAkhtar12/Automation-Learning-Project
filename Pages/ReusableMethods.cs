@@ -16,36 +16,26 @@ namespace NunitAppiumProj.Pages
 
         }
 
-        //public static void HandleException(Exception ex, string context)
-        //{
-        //    // Log the exception message and stack trace
-        //    Console.WriteLine($"Exception occurred: {context}");
-        //    Console.WriteLine($"Message: {ex.Message}");
-        //    Console.WriteLine($"StackTrace: {ex.StackTrace}");
-
-        //    // Optionally, you can fail the test if this is called from a test method
-        //    Assert.Fail($"Test failed due to exception: {ex.Message}");
-        //}
-
-
-        public static void Click1(AndroidDriver driver, IWebElement element, string elementname, ExtentTest? test, SoftAssert softAssert)
+        public static void Click1(AndroidDriver driver, By locator, string elementname, ExtentTest? test, SoftAssert softAssert)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             try
             {
+                IWebElement element = wait.Until(drv => drv.FindElement(locator));
                 wait.Until(drv => element.Displayed && element.Enabled);
 
                 element.Click();
-                test.Log(Status.Pass, $"Clicked: {elementname}");
+                test?.Log(Status.Pass, $"Clicked: {elementname}");
             }
             catch (Exception ex)
             {
                 string message = $"Error clicking on {elementname}: {ex.Message}";
-                test.Log(Status.Fail, message);
+                test?.Log(Status.Fail, message);
                 softAssert.IsTrue(false, message);
                 ReusableMethods.AttachScreenshot(driver, test);
             }
         }
+
 
 
 
@@ -134,6 +124,7 @@ namespace NunitAppiumProj.Pages
                 Assert.Fail("Swipe failed: " + ex.Message);
             }
         }
+
 
 }
 }

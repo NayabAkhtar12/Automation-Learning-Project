@@ -2,31 +2,32 @@
 using NunitAppiumProj.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
+using System.Threading;
 
 namespace NunitAppiumProj.Pages
 {
     public class Masjid : Base
     {
-       ReusableMethods R;
-
         public Masjid(AndroidDriver driver, ExtentTest test)
         {
             this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
-            this.test = test ?? throw new ArgumentNullException(nameof(test));
-            R=new ReusableMethods(driver);
+            Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
         public void MasjidTest()
         {
-            ReusableMethods.Click(driver!, masjidFinderMenu!, " masjidFinderMenu", test);
-            Thread.Sleep(5000);
+            SoftAssert softAssert = new SoftAssert();
+
+            // Test flow using reusable methods
+            ReusableMethods.Click1(driver!, MasjidFinderMenu!, "Masjid Finder Menu", test, softAssert);
+
+            Thread.Sleep(5000); // Consider replacing with WebDriverWait for better stability
             driver!.Navigate().Back();
+
+            softAssert.AllAsserts(test);
         }
 
-        //Element Locators
-
-
-        IWebElement masjidFinderMenu => driver.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmasjid"));
-
+        // Element Locators
+        private By MasjidFinderMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmasjid");
     }
 }

@@ -7,87 +7,100 @@ namespace NunitAppiumProj.Pages
 {
     public class ALQuran : Base
     {
-       ReusableMethods R;
+        ReusableMethods R;
 
         public ALQuran(AndroidDriver driver, ExtentTest test)
         {
             this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
-            this.test = test ?? throw new ArgumentNullException(nameof(test));
-            R=new ReusableMethods(driver);
+            Base.test = test ?? throw new ArgumentNullException(nameof(test));
+            R = new ReusableMethods(driver);
         }
-
 
         public void QuranMajeedModule()
         {
             SoftAssert softAssert = new SoftAssert();
 
-            try
-            {
-                ReusableMethods.Click1(driver!, Continue!, "Continue from splash Screen", test, softAssert);
-                Thread.Sleep(1000);
+      //    ReusableMethods.Click1(driver, Continuebtn, "Continue from splash Screen", test, softAssert);
+            Thread.Sleep(1000);
 
-                ReusableMethods.Click1(driver!, ALQuranMenu!, "Menu from Home Screen", test, softAssert);
-                ReusableMethods.Click1(driver!, AlFatiha!, "Surah Al-Fatiha", test, softAssert);
-                Thread.Sleep(1000);
-                driver!.Navigate().Back();
-                Thread.Sleep(1000);
-                ReusableMethods.Click1(driver, Surah2!, "Surah 2", test, softAssert);
-                Thread.Sleep(2000);
-                driver.Navigate().Back();
-                driver.Navigate().Back();
-            }
-            catch (Exception ex)
-            {
-                ReusableMethods.HandleException(driver, test, "Al Quran", ex);
-                throw;
-            }
-            finally
-            {
-                softAssert.AllAsserts(test); 
-            }
+            ReusableMethods.Click1(driver, ALQuranMenu, "Menu from Home Screen", test, softAssert);
+            ReusableMethods.Click1(driver, AlFatiha, "Surah Al-Fatiha", test, softAssert);
+            Thread.Sleep(1000);
+        //    ReusableMethods.Swipe();
+            driver.Navigate().Back();
+            Thread.Sleep(1000);
+
+            ReusableMethods.Click1(driver, Surah2, "Surah 2", test, softAssert);
+            Thread.Sleep(2000);
+
+            ReusableMethods.Click1(driver!, SelectReciterDropDown, "Clicking RecitersDropdown", test, softAssert);
+            Thread.Sleep(3000);
+
+            ReusableMethods.Click1(driver!, SelectReciter, "Clicking SelectReciter", test, softAssert);
+            Thread.Sleep(3000);
+
+            ReusableMethods.Click1(driver!, PlaySurah, "Clicking PlaySurah", test, softAssert);
+            Thread.Sleep(3000);
+
+            ReusableMethods.Click1(driver!, NextAyah, "Clicking NextAyah", test, softAssert);
+            Thread.Sleep(3000);
+
+            ReusableMethods.Click1(driver!, PrevAyah, "Clicking PrevAyah", test, softAssert);
+            Thread.Sleep(3000);
+
+            ReusableMethods.Click1(driver!, BookMarkPage, "Clicking BookMarkPage", test, softAssert);
+            Thread.Sleep(3000);
+
+            ReusableMethods.Click1(driver!, GotoTranslationsection, "Clicking GotoTranslationsection", test, softAssert);
+            Thread.Sleep(3000);
+
+        //    ReusableMethods.Click1(driver!, DownloadedSection, "Clicking DownloadedSection", test, softAssert);
+         //   Thread.Sleep(3000);
+
+            ReusableMethods.Click1(driver!, ViewTranslation, "Clicking ViewTranslation", test, softAssert);
+            Thread.Sleep(3000);
+
+            ReusableMethods.Click1(driver!, TranslationNextPage, "Clicking TranslationNextPage", test, softAssert);
+            Thread.Sleep(3000);
+
+            ReusableMethods.Click1(driver!, TranslationPrevPage, "Clicking TranslationPrevPage", test, softAssert);
+            Thread.Sleep(3000);
+
+            driver!.Navigate().Back();
+
+            driver.Navigate().Back();
+            driver.Navigate().Back();
+
+            softAssert.AllAsserts(test);
         }
 
-        public void QuranMajeedModule1()
-        {
-            //  ReusableMethods.SplashHandling2ndsessiont();
-
-            try
-            {
-                ReusableMethods.Click(driver!, Continue!, "Continue from splash Screen", test);
-                Thread.Sleep(1000);
-
-                ReusableMethods.Click(driver!, ALQuranMenu!, "Menu from Home Screen", test);
-                ReusableMethods.Click(driver!, AlFatiha!, "Surah Al-Fatiha", test);
-                Thread.Sleep(1000);
-                driver!.Navigate().Back();
-                Thread.Sleep(1000);
-                ReusableMethods.Click(driver, Surah2!, "Surah 2", test);
-                Thread.Sleep(2000);
-                driver.Navigate().Back();
-                driver.Navigate().Back();
-
-              
-            }
-            catch (Exception ex)
-            {
-                //test.Log(Status.Fail, $"Test failed in QuranMajeedModule: {ex.Message}");
-                ReusableMethods.HandleException(driver,test,"Al Quran",ex);
-                    throw;
-            }
-
-        }
-
-
-
-
-        //Element Locator for Surah Location
-        IWebElement? ALQuranMenu => driver.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivquran"));
-
-        //Web Elements
-        IWebElement? AlFatiha => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id='com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName' and @text='Surat Al-Fatiha']"));
-        IWebElement? PlaySurah => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/play"));
-        IWebElement? Surah2 => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id='com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName' and @text='Surat Al-Baqara']"));
-        IWebElement? Continue => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/start_button"));
+        // Element Locators
+        private By ALQuranMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivquran");
+        private By AlFatiha => By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName\" and @text=\"Surat Al-Fatiha\"]");
+        private By PlaySurah => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/play");
+        private By SelectReciterDropDown => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivrecitersArrow");
+        private By RepeatVerse => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/repeat");
+        private By ViewList => By.Id(""); // 🔶 This one is empty – you may want to update it
+        private By LanguageSave => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btnCacncel");
+        private By OnboardSkip => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btn_skip");
+        private By OnboardFinish => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btn_next_step");
+        private By StoragePermissionAllow => By.Id("com.android.permissioncontroller:id/permission_allow_button");
+        private By LocationPermissionAllow => By.Id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
+        private By SelectReciter => By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvReciterEng\" and @text=\"Abd Al-Basit Mujawwad\"]");
+        private By NextAyah => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/forward");
+        private By PrevAyah => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/before");
+        private By BookMarkPage => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/bookmark");
+        private By GotoTranslationsection => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tafser");
+        private By AvailableforDownload => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/transtabTv");
+        private By DownloadTranslation => By.XPath("(//android.widget.ImageView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivHeaderDownStatus\"])[2]");
+        private By DownloadedSection => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tfseerTabTv");
+        private By ViewTranslation => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/imageView2");
+        private By TranslationPrevPage => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivPrevious");
+        private By TranslationNextPage => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivNext");
+        private By SurahBack => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/back");
+        private By Surah2 => By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName\" and @text=\"Surat Al-Baqara\"]");
+        private By SurahAnNisa => By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/textView5\" and @text=\"Surat An-Nisa\"]");
+        private By Continuebtn => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/start_button");
 
 
     }

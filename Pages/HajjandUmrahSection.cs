@@ -1,106 +1,142 @@
 ﻿using AventStack.ExtentReports;
 using NunitAppiumProj.Core;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace NunitAppiumProj.Pages
 {
     public class HajjandUmrahSection : Base
     {
-       ReusableMethods R;
-
         public HajjandUmrahSection(AndroidDriver driver, ExtentTest test)
         {
             this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
-            this.test = test ?? throw new ArgumentNullException(nameof(test));
-            R=new ReusableMethods(driver);
+            Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
         public void HajjSectionTest()
         {
-            ReusableMethods.Click(driver!, hajjUmrahMenu!, "Hajj and Umrah Menu", test);
-            ReusableMethods.Click(driver!, HajjGuideMenu!, "Hajj Guide Menu", test);
-            ReusableMethods.Click(driver!, HajjGuideDay1!, "8th of Dhul Hijjah", test);
-            driver!.Navigate().Back();
-            ReusableMethods.Click(driver!, HajjGuideDay2!, "9th of Dhul Hijjah", test);
+            SoftAssert softAssert = new SoftAssert();
+
+            ReusableMethods.Click1(driver, HajjUmrahMenu, "Hajj and Umrah Menu", test, softAssert);
+            ReusableMethods.Click1(driver, HajjGuideMenu, "Hajj Guide Menu", test, softAssert);
+
+            ReusableMethods.Click1(driver, HajjGuideDay1, "8th of Dhul Hijjah", test, softAssert);
             driver.Navigate().Back();
-            ReusableMethods.Click(driver!, HajjGuideDay3!, "10th of Dhul Hijjah", test);
+
+            ReusableMethods.Click1(driver, HajjGuideDay2, "9th of Dhul Hijjah", test, softAssert);
             driver.Navigate().Back();
-            ReusableMethods.Click(driver!, HajjGuideDay4!, "11th of Dhul Hijjah", test);
+
+            ReusableMethods.Click1(driver, HajjGuideDay3, "10th of Dhul Hijjah", test, softAssert);
             driver.Navigate().Back();
-            ReusableMethods.Click(driver!, HajjGuideDay5!, "12th of Dhul Hijjah", test);
+
+            ReusableMethods.Click1(driver, HajjGuideDay4, "11th of Dhul Hijjah", test, softAssert);
             driver.Navigate().Back();
+
+            ReusableMethods.Click1(driver, HajjGuideDay5, "12th of Dhul Hijjah", test, softAssert);
             driver.Navigate().Back();
+
+            driver.Navigate().Back();
+            Thread.Sleep(3000);
+
+            softAssert.AllAsserts(test);
         }
 
         public void UmrahSectionTest()
         {
-            ReusableMethods.Click(driver!, UmrahGuideMenu!, "Umrah Guide Menu", test);
-            ReusableMethods.Click(driver!, UmrahIhram!, "Umrah - IHRAM", test);
-            driver!.Navigate().Back();
-            ReusableMethods.Click(driver!, UmrahTawaf!, "Umrah - TAWAAF", test);
+            SoftAssert softAssert = new SoftAssert();
+
+            ReusableMethods.Click1(driver, UmrahGuideMenu, "Umrah Guide Menu", test, softAssert);
+
+            ReusableMethods.Click1(driver, UmrahIhram, "IHRAM", test, softAssert);
             driver.Navigate().Back();
-            ReusableMethods.Click(driver!, UmrahSAEE!, "Umrah - SA'EE", test);
+
+            ReusableMethods.Click1(driver, UmrahTawaf, "TAWAAF", test, softAssert);
             driver.Navigate().Back();
-            ReusableMethods.Click(driver!, UmrahShaving!, "Umrah - SHAVING", test);
+
+            ReusableMethods.Click1(driver, UmrahSAEE, "SA’EE", test, softAssert);
             driver.Navigate().Back();
+
+            ReusableMethods.Click1(driver, UmrahShaving, "SHAVING", test, softAssert);
             driver.Navigate().Back();
+
+            driver.Navigate().Back();
+            Thread.Sleep(3000);
+
+            softAssert.AllAsserts(test);
         }
 
         public void FamousPlacesofMakkahTest()
         {
-            ReusableMethods.Click(driver!, FamousPlacesofMakkahMenu!, "Famous Places of Makkah", test);
-           // ReusableMethods.Click(Driver!, FamousPlacesofMakkahKaaba!, "Kaaba", test);
-          //  Driver!.Navigate().Back();
-         //   ReusableMethods.Click(Driver!, FamousPlacesofMakkahMina!, "Mina", test);
-         //   Driver.Navigate().Back();
+            SoftAssert softAssert = new SoftAssert();
+
+            ReusableMethods.Click1(driver, FamousPlacesofMakkahMenu, "Famous Places of Makkah", test, softAssert);
+
+            //  ReusableMethods.Click1(driver, FamousPlacesofMakkahKaaba, "Kaaba", test, softAssert);
+            // driver.Navigate().Back();
+
+            //   ReusableMethods.Click1(driver, FamousPlacesofMakkahMina, "Mina", test, softAssert);
+            Thread.Sleep(1000);
+
             driver.Navigate().Back();
+
+
+            softAssert.AllAsserts(test);
         }
 
         public void FamousPlacesofMedinahTest()
         {
-            ReusableMethods.Click(driver!, FamousPlacesofMedinahMenu!, "Famous Places of Medinah", test);
-            //ReusableMethods.Click(Driver!, FamousPlacesofMedinah_AlNabwi!, "Al Masjid an Nabawi", test);
-            //Driver!.Navigate().Back();
-            //ReusableMethods.Click(Driver!, FamousPlacesofMedinah_UhudMountain!, "Uhud Mountain", test);
-            //Driver.Navigate().Back();
+            SoftAssert softAssert = new SoftAssert();
+
+            ReusableMethods.Click1(driver, FamousPlacesofMedinahMenu, "Famous Places of Medinah", test, softAssert);
+
+            // ReusableMethods.Click1(driver, FamousPlacesofMedinah_AlNabwi, "Al Masjid an Nabawi", test, softAssert);
+            // driver.Navigate().Back();
+
+            //    ReusableMethods.Click1(driver, FamousPlacesofMedinah_UhudMountain, "Uhud Mountain", test, softAssert);
+            Thread.Sleep(1000);
+
             driver.Navigate().Back();
+
+
+            softAssert.AllAsserts(test);
         }
 
         public void QiblaDirectionTest()
         {
-            ReusableMethods.Click(driver!, HajhUmrahUQibla!, "Qibla Direction", test);
-            driver!.Navigate().Back();
+            SoftAssert softAssert = new SoftAssert();
+
+            ReusableMethods.Click1(driver, HajhUmrahQibla, "Qibla Direction", test, softAssert);
+            Thread.Sleep(3000);
             driver.Navigate().Back();
+            driver.Navigate().Back();
+
+            softAssert.AllAsserts(test);
         }
-        //Element Locators
 
+        // Element Locators
+        private By HajjUmrahMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivnameshusna");
+        private By HajjGuideMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivhajj");
+        private By HajjGuideDay1 => By.XPath("//android.widget.TextView[@text='8th of Dhul Hijjah']");
+        private By HajjGuideDay2 => By.XPath("//android.widget.TextView[@text='9th of Dhul Hijjah']");
+        private By HajjGuideDay3 => By.XPath("//android.widget.TextView[@text='10th of Dhul Hijjah']");
+        private By HajjGuideDay4 => By.XPath("//android.widget.TextView[@text='11th of Dhul Hijjah']");
+        private By HajjGuideDay5 => By.XPath("//android.widget.TextView[@text='12th of Dhul Hijjah']");
 
-        IWebElement? hajjUmrahMenu => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivnameshusna"));
-        IWebElement? HajjGuideMenu => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivhajj"));
-        IWebElement? HajjGuideDay1 => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDayDesc\" and @text=\"8th of Dhul Hijjah\"]"));
-        IWebElement? HajjGuideDay2 => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDayDesc\" and @text=\"9th of Dhul Hijjah\"]"));
-        IWebElement? HajjGuideDay3 => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDayDesc\" and @text=\"10th of Dhul Hijjah\"]"));
-        IWebElement? HajjGuideDay4 => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDayDesc\" and @text=\"11th of Dhul Hijjah\"]"));
-        IWebElement? HajjGuideDay5 => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDayDesc\" and @text=\"12th of Dhul Hijjah\"]"));
-        IWebElement? HajjGuideDay6 => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDayDesc\" and @text=\"13th of Dhul Hijjah\"]"));
+        private By UmrahGuideMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivumrah");
+        private By UmrahIhram => By.XPath("//android.widget.TextView[@text='IHRAM']");
+        private By UmrahTawaf => By.XPath("//android.widget.TextView[@text='TAWAAF']");
+        private By UmrahSAEE => By.XPath("//android.widget.TextView[@text=\"SA’EE\"]");
+        private By UmrahShaving => By.XPath("//android.widget.TextView[@text='SHAVING']");
 
-        IWebElement? UmrahGuideMenu => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivumrah"));
-        IWebElement? UmrahIhram => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDay\" and @text=\"IHRAM\"]"));
-        IWebElement? UmrahTawaf => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDay\" and @text=\"TAWAAF\"]"));
-        IWebElement? UmrahSAEE => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDay\" and @text=\"SA’EE\"]"));
-        IWebElement? UmrahShaving => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDay\" and @text=\"SHAVING\"]"));
+        private By FamousPlacesofMakkahMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmakkah");
+        private By FamousPlacesofMakkahKaaba => By.XPath("//android.widget.TextView[@text='Kaaba']");
+        private By FamousPlacesofMakkahMina => By.XPath("//android.widget.TextView[@text='Mina']");
 
-        IWebElement? FamousPlacesofMakkahMenu => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmakkah"));
-        IWebElement? FamousPlacesofMakkahKaaba => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDay\" and @text=\"Kaaba\"]"));
-        IWebElement? FamousPlacesofMakkahMina => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDay\" and @text=\"Mina\"]"));
+        private By FamousPlacesofMedinahMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmadina");
+        private By FamousPlacesofMedinah_AlNabwi => By.XPath("//android.widget.TextView[@text='Al Masjid an Nabawi']");
+        private By FamousPlacesofMedinah_UhudMountain => By.XPath("//android.widget.TextView[@text='Uhud Mountain']");
 
-        IWebElement? FamousPlacesofMedinahMenu => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmadina"));
-        IWebElement? FamousPlacesofMedinah_AlNabwi => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDay\" and @text=\"Al Masjid an Nabawi\"]"));
-        IWebElement? FamousPlacesofMedinah_UhudMountain => driver?.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvDay\" and @text=\"Uhud Mountain\"]"));
-        IWebElement? HajhUmrahUQibla => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivqibla"));
-
+        private By HajhUmrahQibla => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivqibla");
     }
 }

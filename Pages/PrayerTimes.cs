@@ -2,32 +2,34 @@
 using NunitAppiumProj.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
+using System.Threading;
 
 namespace NunitAppiumProj.Pages
 {
     public class PrayerTimes : Base
     {
-       ReusableMethods R;
 
         public PrayerTimes(AndroidDriver driver, ExtentTest test)
         {
             this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
-            this.test = test ?? throw new ArgumentNullException(nameof(test));
-            R=new ReusableMethods(driver);
+            Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
         public void PrayerTimesTest()
         {
-            ReusableMethods.Click(driver!, prayerTimesMenu!, " prayerTimesMenu", test);
-            ReusableMethods.Click(driver!, PrayerTimeNotification!, " prayerTimesMenu", test);
+            SoftAssert softAssert = new SoftAssert();
+
+            ReusableMethods.Click1(driver, prayerTimesMenu, "Prayer Times Menu", test, softAssert);
+            ReusableMethods.Click1(driver, PrayerTimeNotification, "Prayer Time Notification", test, softAssert);
+
             Thread.Sleep(3000);
-            driver!.Navigate().Back();
+            driver.Navigate().Back();
+
+            softAssert.AllAsserts(test);
         }
 
-        //Element Locators
-
-
-        IWebElement? PrayerTimeNotification => driver?.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ib_notification\"])[3]"));
-        IWebElement? prayerTimesMenu => driver?.FindElement(By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivprayers"));
+        // Element Locators
+        private By prayerTimesMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivprayers");
+        private By PrayerTimeNotification => By.XPath("(//android.widget.ImageView[@resource-id='com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ib_notification'])[3]");
     }
 }
