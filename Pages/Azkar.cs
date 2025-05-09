@@ -11,7 +11,7 @@ namespace NunitAppiumProj.Pages
 
         public Azkar(AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
             R = new ReusableMethods(driver);
         }
@@ -20,18 +20,17 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, azkarMenu, "Azkar Menu", test, softAssert);
-            ReusableMethods.Click1(driver, Azkar_DuaSelection1, "Azkar Dua Selection - Upon waking up", test, softAssert);
-            ReusableMethods.Click1(driver, AddtoBookmark, "Add to Bookmark", test, softAssert);
-            driver.Navigate().Back();
-            ReusableMethods.Click1(driver, BooksMarksButton, "Bookmarks Button", test, softAssert);
+            ReusableMethods.Click1(driver, azkarMenu, "Azkar Menu", test, "", softAssert);
+            ReusableMethods.Click1(driver, Azkar_DuaSelection1, "Azkar Dua Selection - Upon waking up", test, "", softAssert);
+            ReusableMethods.Click1(driver, AddtoBookmark, "Add to Bookmark", test, "", softAssert);
+            ReusableMethods.Navigateback();
+            ReusableMethods.Click1(driver, BooksMarksButton, "Bookmarks Button", test, "", softAssert);
 
-            // Uncomment these if ViewBookmark check is needed
             // ReusableMethods.Click1(driver, ViewBookmark, "View Bookmark - Upon waking up", test, softAssert);
             // driver.Navigate().Back();
 
-            driver.Navigate().Back();
-            driver.Navigate().Back();
+            ReusableMethods.Navigateback();
+            ReusableMethods.Navigateback();
 
             softAssert.AllAsserts(test);
         }

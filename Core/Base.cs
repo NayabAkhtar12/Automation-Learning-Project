@@ -10,7 +10,7 @@ namespace NunitAppiumProj.Core
     [TestFixture]
     public class Base
     {
-        public AndroidDriver? driver;
+        public static AndroidDriver? driver;
         protected ExtentReports Extent = new ExtentReports();
         protected static ExtentTest? test;
 
@@ -26,7 +26,7 @@ namespace NunitAppiumProj.Core
         [OneTimeSetUp]
         protected void OneTimeSetup()
         {
-            test = Extent.CreateTest(TestContext.CurrentContext.Test.Name);
+           // test = Extent.CreateTest(TestContext.CurrentContext.Test.Name);
             string reportPath = @"D:\Reports\report.html";  
             _reporter = new ExtentSparkReporter(reportPath);
             Extent.AttachReporter(_reporter);
@@ -107,31 +107,6 @@ namespace NunitAppiumProj.Core
             }
         }
 
-
-        //public void RunWithReporting(string testName, Action<SoftAssert> testSteps)
-        //{
-        //    SoftAssert softAssert = new SoftAssert();
-        //    try
-        //    {
-        //        test.Log(Status.Info, $"Starting {testName}");
-        //        testSteps(softAssert); // Run actual test steps
-        //        test.Log(Status.Pass, $"{testName} completed successfully.");
-        //    }
-        //    catch (AssertionException ex)
-        //    {
-        //        test.Fail("Assertion failed: " + ex.Message);
-        //        throw;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        test.Fail("Unexpected error: " + ex.Message);
-        //        throw;
-        //    }
-        //    finally
-        //    {
-        //        softAssert.AllAsserts(test); // Report soft assertion results
-        //    }
-        //}
 
 
         [TearDown]

@@ -12,7 +12,7 @@ namespace NunitAppiumProj.Pages
 
         public HijriCalender(AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
             R = new ReusableMethods(driver);
         }
@@ -21,17 +21,17 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, hijriCalendarMenu, "Hijri Calendar Menu", test, softAssert);
+            ReusableMethods.Click1(driver, hijriCalendarMenu, "Hijri Calendar Menu", test, "", softAssert);
             Thread.Sleep(2000);
-            ReusableMethods.Click1(driver, PrevMonth, "Previous Month", test, softAssert);
-            ReusableMethods.Click1(driver, NextMonth, "Next Month", test, softAssert);
-            ReusableMethods.Click1(driver, Date, "Date 14", test, softAssert);
+            ReusableMethods.Click1(driver, PrevMonth, "Previous Month", test, "", softAssert);
+            ReusableMethods.Click1(driver, NextMonth, "Next Month", test, "", softAssert);
+            ReusableMethods.Click1(driver, Date, "Date 14", test, "", softAssert);
             Thread.Sleep(2000);
-            ReusableMethods.Click1(driver, RamadanCalendarElement, "Ramadan Calendar Element", test, softAssert);
+            ReusableMethods.Click1(driver, RamadanCalendarElement, "Ramadan Calendar Element", test, "", softAssert);
             Thread.Sleep(2000);
 
-            driver.Navigate().Back();
-            driver.Navigate().Back();
+            ReusableMethods.Navigateback();
+            ReusableMethods.Navigateback();
 
             softAssert.AllAsserts(test);
         }

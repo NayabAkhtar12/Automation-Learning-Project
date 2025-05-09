@@ -10,7 +10,7 @@ namespace NunitAppiumProj.Pages
     {
         public Masjid(AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
@@ -19,10 +19,10 @@ namespace NunitAppiumProj.Pages
             SoftAssert softAssert = new SoftAssert();
 
             // Test flow using reusable methods
-            ReusableMethods.Click1(driver!, MasjidFinderMenu!, "Masjid Finder Menu", test, softAssert);
+            ReusableMethods.Click1(driver!, MasjidFinderMenu!, "Masjid Finder Menu", test, "", softAssert);
 
-            Thread.Sleep(5000); // Consider replacing with WebDriverWait for better stability
-            driver!.Navigate().Back();
+            Thread.Sleep(5000); 
+            ReusableMethods.Navigateback();
 
             softAssert.AllAsserts(test);
         }

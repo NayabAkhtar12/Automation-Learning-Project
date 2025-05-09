@@ -11,7 +11,7 @@ namespace HolyQuran.Pages
     {
         public Settings (AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
@@ -19,32 +19,31 @@ namespace HolyQuran.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            // Test flow using reusable methods
-            ReusableMethods.Click1(driver!, Pro, "Pro Button", test, softAssert);
+            ReusableMethods.Click1(driver!, Pro, "Pro Button", test, "", softAssert);
             Thread.Sleep(3000);
-            driver!.Navigate().Back();
+            ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver!, Menu, "Menu Button", test, softAssert);
+            ReusableMethods.Click1(driver!, Menu, "Menu Button", test, "", softAssert);
             Thread.Sleep(3000);
 
-            ReusableMethods.Click1(driver!, PrivacyPolicy, "Privacy Policy", test, softAssert);
+            ReusableMethods.Click1(driver!, PrivacyPolicy, "Privacy Policy", test, "", softAssert);
             Thread.Sleep(7000);
-            driver!.Navigate().Back();
+            ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver!, Menu, "Menu Button", test, softAssert);
-            ReusableMethods.Click1(driver!, MoreApps, "More Apps", test, softAssert);
+            ReusableMethods.Click1(driver!, Menu, "Menu Button", test, "", softAssert);
+            ReusableMethods.Click1(driver!, MoreApps, "More Apps", test, "", softAssert);
             Thread.Sleep(3000);
-            driver!.Navigate().Back();
+            ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver!, Menu, "Menu Button", test, softAssert);
-            ReusableMethods.Click1(driver!, RateUs, "Rate Us", test, softAssert);
+            ReusableMethods.Click1(driver!, Menu, "Menu Button", test, "", softAssert);
+            ReusableMethods.Click1(driver!, RateUs, "Rate Us", test, "", softAssert);
             Thread.Sleep(3000);
-            driver!.Navigate().Back();
+            ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver!, Menu, "Menu Button", test, softAssert);
-            ReusableMethods.Click1(driver!, ExitApp, "Exit App", test, softAssert);
+            ReusableMethods.Click1(driver!, Menu, "Menu Button", test, "", softAssert);
+            ReusableMethods.Click1(driver!, ExitApp, "Exit App", test, "", softAssert);
             Thread.Sleep(3000);
-            ReusableMethods.Click1(driver!, No, "Do not Exit App", test, softAssert);
+            ReusableMethods.Click1(driver!, No, "Do not Exit App", test, "", softAssert);
 
            // driver!.Navigate().Back();
          

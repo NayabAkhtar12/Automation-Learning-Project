@@ -7,18 +7,19 @@ using OpenQA.Selenium.Appium.Android;
 
 namespace NunitAppiumProj.TestClass
 {
-    /* Oops: pillars 
-     * Abstraction   : AppiumDriver Interface, 
-     * Inheritance   : from Base class getting the driver instance
-     * Encpsulation  : Making the members private/ Protected 
-     * Polymorphism  : Implicit wait, time in minutes, seconds, Hours, action class, assert class
-     *
-      */
     [TestFixture]
     public class TestClass : Base
     {
 
         [Test, Order(1)]
+        public void ALQuranStartup()
+        {
+            test = Extent.CreateTest("Quran Majeed Fist Session Report");
+            var Firstsession = new FirstSession(driver!, test);
+            Firstsession.QuranFirstSessionFlow();
+
+        }
+        [Test, Order(11)]
         public void ALQuran_1()
         {
             test = Extent.CreateTest("Quran Majeed Module Report");
@@ -108,7 +109,7 @@ namespace NunitAppiumProj.TestClass
                 MasjidF.MasjidTest();
         }
 
-        [Test, Order(9)] // Change the order number as needed
+        [Test, Order(9)] 
         public void NamesSectionTestCase()
         {
             test = Extent.CreateTest("Names of Allah and Prophet Test");
@@ -118,10 +119,10 @@ namespace NunitAppiumProj.TestClass
                 namesSection.NamesSectionTest();           
         }
 
-        [Test, Order(10)] // Change the order number as needed
+        [Test, Order(10)] 
         public void MenuandPremium()
         {
-            test = Extent.CreateTest("Names of Allah and Prophet Test");
+            test = Extent.CreateTest("MenuandPremium");
 
             test.Log(Status.Info, "Starting Names Section Test");
             var settings = new Settings((AndroidDriver)driver!, test);

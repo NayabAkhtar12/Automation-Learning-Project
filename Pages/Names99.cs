@@ -10,7 +10,7 @@ namespace NunitAppiumProj.Pages
     {
         public Names99(AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
@@ -18,33 +18,32 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            // Test flow using reusable methods
-            ReusableMethods.Click1(driver!, Namesnine!, "Names Section Menu", test, softAssert);
+            ReusableMethods.Click1(driver!, Namesnine!, "Names Section Menu", test, "", softAssert);
 
             // Read Allah Names
-            ReusableMethods.Click1(driver!, ReadNamesAllah!, "Read Names of Allah", test, softAssert);
+            ReusableMethods.Click1(driver!, ReadNamesAllah!, "Read Names of Allah", test, "", softAssert);
             Thread.Sleep(2000);
-            driver!.Navigate().Back();
+            ReusableMethods.Navigateback();
 
             // Listen Allah Names
-            ReusableMethods.Click1(driver!, ListenNamesAllah!, "Listen Names of Allah", test, softAssert);
-            ReusableMethods.Click1(driver!, Nameplay!, "Play Button for Allah Names", test, softAssert);
+            ReusableMethods.Click1(driver!, ListenNamesAllah!, "Listen Names of Allah", test, "", softAssert);
+            ReusableMethods.Click1(driver!, Nameplay!, "Play Button for Allah Names", test, "", softAssert);
             Thread.Sleep(2000);
-            driver!.Navigate().Back();
+            ReusableMethods.Navigateback();
 
             // Read Prophet Names
-            ReusableMethods.Click1(driver!, ReadNamesHusna!, "Read Names of Prophet", test, softAssert);
+            ReusableMethods.Click1(driver!, ReadNamesHusna!, "Read Names of Prophet", test, "", softAssert);
             Thread.Sleep(2000);
-            driver!.Navigate().Back();
+            ReusableMethods.Navigateback();
 
             // Listen Prophet Names
-            ReusableMethods.Click1(driver!, ListenNamesNabi!, "Listen Names of Prophet", test, softAssert);
-            ReusableMethods.Click1(driver!, Nameplay!, "Play Button for Prophet Names", test, softAssert);
+            ReusableMethods.Click1(driver!, ListenNamesNabi!, "Listen Names of Prophet", test, "", softAssert);
+            ReusableMethods.Click1(driver!, Nameplay!, "Play Button for Prophet Names", test, "", softAssert);
             Thread.Sleep(2000);
-            driver!.Navigate().Back();
+            ReusableMethods.Navigateback();
 
             // Final back navigation to go to the main screen
-            driver!.Navigate().Back();
+            ReusableMethods.Navigateback();
 
             softAssert.AllAsserts(test);
         }

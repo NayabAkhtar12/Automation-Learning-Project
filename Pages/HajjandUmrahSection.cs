@@ -10,7 +10,7 @@ namespace NunitAppiumProj.Pages
     {
         public HajjandUmrahSection(AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
@@ -18,25 +18,25 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, HajjUmrahMenu, "Hajj and Umrah Menu", test, softAssert);
-            ReusableMethods.Click1(driver, HajjGuideMenu, "Hajj Guide Menu", test, softAssert);
+            ReusableMethods.Click1(driver, HajjUmrahMenu, "Hajj and Umrah Menu", test, "", softAssert);
+            ReusableMethods.Click1(driver, HajjGuideMenu, "Hajj Guide Menu", test, "", softAssert);
 
-            ReusableMethods.Click1(driver, HajjGuideDay1, "8th of Dhul Hijjah", test, softAssert);
-            driver.Navigate().Back();
+            ReusableMethods.Click1(driver, HajjGuideDay1, "8th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver, HajjGuideDay2, "9th of Dhul Hijjah", test, softAssert);
-            driver.Navigate().Back();
+            ReusableMethods.Click1(driver, HajjGuideDay2, "9th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver, HajjGuideDay3, "10th of Dhul Hijjah", test, softAssert);
-            driver.Navigate().Back();
+            ReusableMethods.Click1(driver, HajjGuideDay3, "10th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver, HajjGuideDay4, "11th of Dhul Hijjah", test, softAssert);
-            driver.Navigate().Back();
+            ReusableMethods.Click1(driver, HajjGuideDay4, "11th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver, HajjGuideDay5, "12th of Dhul Hijjah", test, softAssert);
-            driver.Navigate().Back();
+            ReusableMethods.Click1(driver, HajjGuideDay5, "12th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Navigateback();
 
-            driver.Navigate().Back();
+            ReusableMethods.Navigateback();
             Thread.Sleep(3000);
 
             softAssert.AllAsserts(test);
@@ -46,18 +46,18 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, UmrahGuideMenu, "Umrah Guide Menu", test, softAssert);
+            ReusableMethods.Click1(driver, UmrahGuideMenu, "Umrah Guide Menu", test, "", softAssert);
 
-            ReusableMethods.Click1(driver, UmrahIhram, "IHRAM", test, softAssert);
+            ReusableMethods.Click1(driver, UmrahIhram, "IHRAM", test, "", softAssert);
             driver.Navigate().Back();
 
-            ReusableMethods.Click1(driver, UmrahTawaf, "TAWAAF", test, softAssert);
+            ReusableMethods.Click1(driver, UmrahTawaf, "TAWAAF", test, "", softAssert);
             driver.Navigate().Back();
 
-            ReusableMethods.Click1(driver, UmrahSAEE, "SA’EE", test, softAssert);
+            ReusableMethods.Click1(driver, UmrahSAEE, "SA’EE", test, "", softAssert);
             driver.Navigate().Back();
 
-            ReusableMethods.Click1(driver, UmrahShaving, "SHAVING", test, softAssert);
+            ReusableMethods.Click1(driver, UmrahShaving, "SHAVING", test, "", softAssert);
             driver.Navigate().Back();
 
             driver.Navigate().Back();
@@ -70,7 +70,7 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, FamousPlacesofMakkahMenu, "Famous Places of Makkah", test, softAssert);
+            ReusableMethods.Click1(driver, FamousPlacesofMakkahMenu, "Famous Places of Makkah", test, "", softAssert);
 
             //  ReusableMethods.Click1(driver, FamousPlacesofMakkahKaaba, "Kaaba", test, softAssert);
             // driver.Navigate().Back();
@@ -88,12 +88,12 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, FamousPlacesofMedinahMenu, "Famous Places of Medinah", test, softAssert);
+            ReusableMethods.Click1(driver, FamousPlacesofMedinahMenu, "Famous Places of Medinah", test, "", softAssert);
 
-            // ReusableMethods.Click1(driver, FamousPlacesofMedinah_AlNabwi, "Al Masjid an Nabawi", test, softAssert);
+            // ReusableMethods.Click1(driver, FamousPlacesofMedinah_AlNabwi, "Al Masjid an Nabawi", test, "",softAssert);
             // driver.Navigate().Back();
 
-            //    ReusableMethods.Click1(driver, FamousPlacesofMedinah_UhudMountain, "Uhud Mountain", test, softAssert);
+            //    ReusableMethods.Click1(driver, FamousPlacesofMedinah_UhudMountain, "Uhud Mountain", test,"", softAssert);
             Thread.Sleep(1000);
 
             driver.Navigate().Back();
@@ -106,7 +106,7 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, HajhUmrahQibla, "Qibla Direction", test, softAssert);
+            ReusableMethods.Click1(driver, HajhUmrahQibla, "Qibla Direction", test, "", softAssert);
             Thread.Sleep(3000);
             driver.Navigate().Back();
             driver.Navigate().Back();

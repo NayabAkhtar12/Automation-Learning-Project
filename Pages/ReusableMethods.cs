@@ -11,28 +11,37 @@ namespace NunitAppiumProj.Pages
 
         public ReusableMethods(AndroidDriver? driver)
         {
-            this.driver = driver;
+            Base.driver = driver;
             //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
         }
 
-        public static void Click1(AndroidDriver driver, By locator, string elementname, ExtentTest? test, SoftAssert softAssert)
+        public static void Click1(AndroidDriver driver, By locator, string ElementName, ExtentTest? test, string expectedText, SoftAssert softAssert)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             try
             {
                 IWebElement element = wait.Until(drv => drv.FindElement(locator));
                 wait.Until(drv => element.Displayed && element.Enabled);
+                //IWebElement expectedElement = driver.FindElement(locator);
+                string actualText = element.Text;
 
+                test?.Log(Status.Info, $"Actual text of {ElementName}: '{actualText}'");
+
+
+                if (!string.IsNullOrWhiteSpace(expectedText))
+                {
+                    softAssert.Contains(expectedText, actualText, $"Text mismatch before clicking {ElementName}");
+                }
                 element.Click();
-                test?.Log(Status.Pass, $"Clicked: {elementname}");
+                test?.Log(Status.Pass, $"Clicked: {ElementName}");
             }
             catch (Exception ex)
             {
-                string message = $"Error clicking on {elementname}: {ex.Message}";
+                string message = $"Error clicking on {expectedText}: {ex.Message}";
                 test?.Log(Status.Fail, message);
                 softAssert.IsTrue(false, message);
-                ReusableMethods.AttachScreenshot(driver, test);
+                AttachScreenshot(driver, test);
             }
         }
 
@@ -125,6 +134,13 @@ namespace NunitAppiumProj.Pages
             }
         }
 
-
+        public static void Navigateback()
+        {
+            try
+            {
+                driver.Navigate().Back();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+        }
 }
 }

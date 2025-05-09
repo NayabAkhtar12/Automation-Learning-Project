@@ -11,7 +11,7 @@ namespace NunitAppiumProj.Pages
 
         public QiblaFinder(AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
             R=new ReusableMethods(driver);
         }
@@ -20,12 +20,12 @@ namespace NunitAppiumProj.Pages
         {
                SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, QiblaFindermenu, "Menu from Home Screen", test, softAssert);
-                ReusableMethods.Click1(driver, SelectCompassMenu, "Select Compass Menu", test, softAssert);
-                ReusableMethods.Click1(driver, Theme, "Theme", test, softAssert);
+            ReusableMethods.Click1(driver, QiblaFindermenu, "Menu from Home Screen", test, "", softAssert);
+                ReusableMethods.Click1(driver, SelectCompassMenu, "Select Compass Menu", test, "", softAssert);
+                ReusableMethods.Click1(driver, Theme, "Theme", test, "", softAssert);
                 Thread.Sleep(2000);
-                driver.Navigate().Back();
-               softAssert.AllAsserts(test); 
+            ReusableMethods.Navigateback();
+            softAssert.AllAsserts(test); 
         }
 
 

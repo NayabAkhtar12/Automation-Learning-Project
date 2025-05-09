@@ -11,7 +11,7 @@ namespace NunitAppiumProj.Pages
 
         public PrayerTimes(AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
@@ -19,11 +19,11 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, prayerTimesMenu, "Prayer Times Menu", test, softAssert);
-            ReusableMethods.Click1(driver, PrayerTimeNotification, "Prayer Time Notification", test, softAssert);
+            ReusableMethods.Click1(driver, prayerTimesMenu, "Prayer Times Menu", test, "", softAssert);
+            ReusableMethods.Click1(driver, PrayerTimeNotification, "Prayer Time Notification", test, "", softAssert);
 
             Thread.Sleep(3000);
-            driver.Navigate().Back();
+            ReusableMethods.Navigateback();
 
             softAssert.AllAsserts(test);
         }

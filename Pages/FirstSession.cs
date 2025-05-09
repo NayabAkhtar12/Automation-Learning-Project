@@ -11,7 +11,7 @@ namespace NunitAppiumProj.Pages
     {
         public FirstSession(AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
         }
 
@@ -19,34 +19,26 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, Continue, "Clicking Continue", test, softAssert);
+            ReusableMethods.Click1(driver, Continue, "Continue", test, "Continue", softAssert);
             Thread.Sleep(3000);
+            ReusableMethods.Click1(driver, SelectLanguage, "SelectLanguage", test, "English", softAssert);
+            ReusableMethods.Click1(driver, LanguageSave, "", test, "LanguageSave", softAssert);
+            ReusableMethods.Click1(driver, StoragePermissionAllow, "StoragePermissionAllow", test," ", softAssert);
+            ReusableMethods.Click1(driver, LocationPermissionAllow, "StoragePermissionAllow", test," ", softAssert);
+            ReusableMethods.Click1(driver, ALQuranMenu, "AL-Quran", test, "AL-Quran", softAssert);
+            ReusableMethods.Click1(driver, Downloadinbackground, "Download in Background", test," ", softAssert);
 
-            ReusableMethods.Click1(driver, LanguageSave, "Clicking Language Save", test, softAssert);
-            ReusableMethods.Click1(driver, OnboardSkip, "Clicking Onboard Skip", test, softAssert);
-            ReusableMethods.Click1(driver, OnboardFinish, "Clicking Onboard Finish", test, softAssert);
-            ReusableMethods.Click1(driver, StoragePermissionAllow, "Allowing Storage Permission", test, softAssert);
-            ReusableMethods.Click1(driver, LocationPermissionAllow, "Allowing Location Permission", test, softAssert);
-
+         //   driver.Navigate().Back();
             softAssert.AllAsserts(test);
         }
-        public void AlQuranDownload()
-        {
-            SoftAssert softAssert = new SoftAssert();
-
-            ReusableMethods.Click1(driver, ALQuranMenu, "Clicking Quran Menu", test, softAssert);
-            Thread.Sleep(60000);
-
-            driver.Navigate().Back();
-
-            softAssert.AllAsserts(test);
-        }
+     
 
         // Element Locators
         private By ALQuranMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivquran");
-        private By Continue => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/StartButton");
-        private By LanguageSave => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btnCacncel");
-        private By OnboardSkip => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btn_skip");
+        private By Continue => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/start_button");
+        private By SelectLanguage => By.XPath("//androidx.recyclerview.widget.RecyclerView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/recycler_view\"]/android.view.ViewGroup[1]");
+        private By LanguageSave => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btnDone");
+        private By Downloadinbackground => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btndownloadinbg");
         private By OnboardFinish => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btn_next_step");
         private By StoragePermissionAllow => By.Id("com.android.permissioncontroller:id/permission_allow_button");
         private By LocationPermissionAllow => By.Id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");

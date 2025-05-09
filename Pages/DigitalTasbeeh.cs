@@ -11,7 +11,7 @@ namespace NunitAppiumProj.Pages
 
         public DigitalTasbeeh(AndroidDriver driver, ExtentTest test)
         {
-            this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            Base.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             Base.test = test ?? throw new ArgumentNullException(nameof(test));
             R = new ReusableMethods(driver);
         }
@@ -20,14 +20,14 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, DigitalTasbeehMenu, "DigitalTasbeehMenu", test, softAssert);
-            ReusableMethods.Click1(driver, SelectTasbeehbutton, "Select Tasbeeh button", test, softAssert);
-            ReusableMethods.Click1(driver, SelectTasbeeh, "SelectTasbeeh", test, softAssert);
-            ReusableMethods.Click1(driver, CountTasbeeh, "CountTasbeeh", test, softAssert);
-            ReusableMethods.Click1(driver, CountTasbeeh, "CountTasbeeh", test, softAssert);
-            ReusableMethods.Click1(driver, CountTasbeeh, "CountTasbeeh", test, softAssert);
+            ReusableMethods.Click1(driver, DigitalTasbeehMenu, "DigitalTasbeehMenu", test, "", softAssert);
+            ReusableMethods.Click1(driver, SelectTasbeehbutton, "Select Tasbeeh button", test, "", softAssert);
+            ReusableMethods.Click1(driver, SelectTasbeeh, "SelectTasbeeh", test, "", softAssert);
+            ReusableMethods.Click1(driver, CountTasbeeh, "CountTasbeeh", test, "", softAssert);
+            ReusableMethods.Click1(driver, CountTasbeeh, "CountTasbeeh", test, "", softAssert);
+            ReusableMethods.Click1(driver, CountTasbeeh, "CountTasbeeh", test, "", softAssert);
 
-            driver.Navigate().Back();
+            ReusableMethods.Navigateback();
 
             softAssert.AllAsserts(test);
         }
