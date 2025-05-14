@@ -21,12 +21,12 @@ namespace NunitAppiumProj.Pages
 
             ReusableMethods.Click1(driver, Continue, "Continue", test, "Continue", softAssert);
             Thread.Sleep(3000);
-            ReusableMethods.Click1(driver, SelectLanguage, "SelectLanguage", test, "English", softAssert);
-            ReusableMethods.Click1(driver, LanguageSave, "", test, "LanguageSave", softAssert);
-            ReusableMethods.Click1(driver, StoragePermissionAllow, "StoragePermissionAllow", test," ", softAssert);
-            ReusableMethods.Click1(driver, LocationPermissionAllow, "StoragePermissionAllow", test," ", softAssert);
-            ReusableMethods.Click1(driver, ALQuranMenu, "AL-Quran", test, "AL-Quran", softAssert);
-            ReusableMethods.Click1(driver, Downloadinbackground, "Download in Background", test," ", softAssert);
+            ReusableMethods.Click1(driver, SelectLanguage, "SelectLanguage", test, "", softAssert);
+            ReusableMethods.Click1(driver, LanguageSave, "LanguageSave", test, "", softAssert);
+            ReusableMethods.Click1(driver, StoragePermissionAllow, "StoragePermissionAllow", test,"", softAssert);
+            ReusableMethods.Click1(driver, LocationPermissionAllow, "StoragePermissionAllow", test,"", softAssert);
+            ReusableMethods.Click1(driver, ALQuranMenu, "AL-Quran", test, "", softAssert);
+            ReusableMethods.Click1(driver, Downloadinbackground, "Download in Background", test,"", softAssert);
 
          //   driver.Navigate().Back();
             softAssert.AllAsserts(test);

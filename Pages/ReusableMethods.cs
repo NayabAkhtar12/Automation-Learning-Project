@@ -16,23 +16,26 @@ namespace NunitAppiumProj.Pages
 
         }
 
-        public static void Click1(AndroidDriver driver, By locator, string ElementName, ExtentTest? test, string expectedText, SoftAssert softAssert)
+        public static void Click(AndroidDriver driver, By locator, string ElementName, ExtentTest? test, string expectedText, SoftAssert softAssert)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             try
             {
                 IWebElement element = wait.Until(drv => drv.FindElement(locator));
                 wait.Until(drv => element.Displayed && element.Enabled);
-                //IWebElement expectedElement = driver.FindElement(locator);
-                string actualText = element.Text;
+                 string actualText = element.Text;
+                //  IWebElement expectedElement = driver.FindElement(locator);
+                // string actualText = element.GetAttribute("text");
 
-                test?.Log(Status.Info, $"Actual text of {ElementName}: '{actualText}'");
+              //  test?.Log(Status.Info, $"Actual text of {ElementName}: '{actualText}'");
 
 
                 if (!string.IsNullOrWhiteSpace(expectedText))
                 {
                     softAssert.Contains(expectedText, actualText, $"Text mismatch before clicking {ElementName}");
                 }
+                softAssert.IsTrue(element.Displayed && element.Enabled, $"Element '{locator}' should be visible and enabled.");
+                test?.Log(Status.Info, $"Element located: {ElementName}");
                 element.Click();
                 test?.Log(Status.Pass, $"Clicked: {ElementName}");
             }
@@ -45,6 +48,51 @@ namespace NunitAppiumProj.Pages
             }
         }
 
+        public static void Click1(AndroidDriver driver, By locator, string ElementName, ExtentTest? test, string expectedText, SoftAssert softAssert)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement element;
+
+            try
+            {
+                try
+                {
+                    element = wait.Until(drv =>
+                    {
+                        var el = drv.FindElement(locator);
+                        return (el.Displayed && el.Enabled) ? el : null;
+                    });
+
+                    softAssert.IsTrue(true, $"Element '{ElementName}' is visible and enabled.");
+                }
+                catch (Exception innerEx)
+                {
+                    string msg = $"Element '{ElementName}' not found or not visible/enabled. Exception: {innerEx.Message}";
+                    test?.Log(Status.Fail, msg);
+                    softAssert.IsTrue(false, msg);
+                    AttachScreenshot(driver, test);
+                    return;
+                }
+
+                string actualText = element.Text;
+           //      test?.Log(Status.Info, $"Actual text of {ElementName}: '{actualText}'");
+                if (!string.IsNullOrWhiteSpace(expectedText))
+                {
+                    softAssert.Contains(expectedText, actualText, $"Text mismatch before clicking {ElementName}");
+                }
+
+            //    test?.Log(Status.Info, $"Element located and verified: {ElementName}");
+                element.Click();
+                test?.Log(Status.Pass, $"Clicked: {ElementName}");
+            }
+            catch (Exception ex)
+            {
+                string message = $"Unexpected error while clicking '{ElementName}': {ex.Message}";
+                test?.Log(Status.Fail, message);
+                softAssert.IsTrue(false, message);
+                AttachScreenshot(driver, test);
+            }
+        }
 
 
 

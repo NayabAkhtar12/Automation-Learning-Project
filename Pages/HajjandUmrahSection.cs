@@ -21,23 +21,28 @@ namespace NunitAppiumProj.Pages
             ReusableMethods.Click1(driver, HajjUmrahMenu, "Hajj and Umrah Menu", test, "", softAssert);
             ReusableMethods.Click1(driver, HajjGuideMenu, "Hajj Guide Menu", test, "", softAssert);
 
-            ReusableMethods.Click1(driver, HajjGuideDay1, "8th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Click1(driver, HajjGuideDay1, "8th of Dhul Hijjah", test, "8th of Dhul Hijjah", softAssert);
+            Thread.Sleep(2000);
             ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver, HajjGuideDay2, "9th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Click1(driver, HajjGuideDay2, "9th of Dhul Hijjah", test, "9th of Dhul Hijjah", softAssert);
+            Thread.Sleep(2000);
             ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver, HajjGuideDay3, "10th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Click1(driver, HajjGuideDay3, "10th of Dhul Hijjah", test, "10th of Dhul Hijjah", softAssert);
+            Thread.Sleep(2000);
             ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver, HajjGuideDay4, "11th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Click1(driver, HajjGuideDay4, "11th of Dhul Hijjah", test, "11th of Dhul Hijjah", softAssert);
+            Thread.Sleep(2000);
             ReusableMethods.Navigateback();
 
-            ReusableMethods.Click1(driver, HajjGuideDay5, "12th of Dhul Hijjah", test, "", softAssert);
+            ReusableMethods.Click1(driver, HajjGuideDay5, "12th of Dhul Hijjah", test, "12th of Dhul Hijjah", softAssert);
+            Thread.Sleep(2000);
             ReusableMethods.Navigateback();
 
             ReusableMethods.Navigateback();
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
 
             softAssert.AllAsserts(test);
         }
@@ -48,20 +53,24 @@ namespace NunitAppiumProj.Pages
 
             ReusableMethods.Click1(driver, UmrahGuideMenu, "Umrah Guide Menu", test, "", softAssert);
 
-            ReusableMethods.Click1(driver, UmrahIhram, "IHRAM", test, "", softAssert);
+            ReusableMethods.Click1(driver, UmrahIhram, "IHRAM", test, "IHRAM", softAssert);
+            Thread.Sleep(2000);
             driver.Navigate().Back();
 
-            ReusableMethods.Click1(driver, UmrahTawaf, "TAWAAF", test, "", softAssert);
+            ReusableMethods.Click1(driver, UmrahTawaf, "TAWAAF", test, "TAWAAF", softAssert);
+            Thread.Sleep(2000);
             driver.Navigate().Back();
 
-            ReusableMethods.Click1(driver, UmrahSAEE, "SA’EE", test, "", softAssert);
+            ReusableMethods.Click1(driver, UmrahSAEE, "SA’EE", test, "SA’EE", softAssert);
+            Thread.Sleep(2000);
             driver.Navigate().Back();
 
-            ReusableMethods.Click1(driver, UmrahShaving, "SHAVING", test, "", softAssert);
+            ReusableMethods.Click1(driver, UmrahShaving, "SHAVING", test, "SHAVING", softAssert);
+            Thread.Sleep(2000);
             driver.Navigate().Back();
 
             driver.Navigate().Back();
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
 
             softAssert.AllAsserts(test);
         }

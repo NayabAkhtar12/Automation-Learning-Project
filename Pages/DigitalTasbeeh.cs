@@ -20,12 +20,12 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, DigitalTasbeehMenu, "DigitalTasbeehMenu", test, "", softAssert);
+            ReusableMethods.Click1(driver, DigitalTasbeehMenu, "Digital Tasbeeh Menu", test, "", softAssert);
             ReusableMethods.Click1(driver, SelectTasbeehbutton, "Select Tasbeeh button", test, "", softAssert);
-            ReusableMethods.Click1(driver, SelectTasbeeh, "SelectTasbeeh", test, "", softAssert);
-            ReusableMethods.Click1(driver, CountTasbeeh, "CountTasbeeh", test, "", softAssert);
-            ReusableMethods.Click1(driver, CountTasbeeh, "CountTasbeeh", test, "", softAssert);
-            ReusableMethods.Click1(driver, CountTasbeeh, "CountTasbeeh", test, "", softAssert);
+            ReusableMethods.Click1(driver, SelectTasbeeh, "Select Tasbeeh", test, "الْحَمْدُ لِلَّهِ", softAssert);
+            ReusableMethods.Click1(driver, CountTasbeeh, "Count Tasbeeh", test, "", softAssert);
+            ReusableMethods.Click1(driver, CountTasbeeh, "Count Tasbeeh", test, "", softAssert);
+            ReusableMethods.Click1(driver, CountTasbeeh, "Count Tasbeeh", test, "", softAssert);
 
             ReusableMethods.Navigateback();
 

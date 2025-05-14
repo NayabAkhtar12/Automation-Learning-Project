@@ -10,49 +10,41 @@ namespace NunitAppiumProj.Core
     [TestFixture]
     public class Base
     {
-        public static AndroidDriver? driver;
+        protected static AndroidDriver? driver;
         protected ExtentReports Extent = new ExtentReports();
         protected static ExtentTest? test;
 
         private ExtentSparkReporter? _reporter;
 
-        protected AndroidDriver? Driver
-        {
-            get => driver;
-            set => driver = value;
-        }
+        //protected AndroidDriver? Driver
+        //{
+        //    get => driver;
+        //    set => driver = value;
+        //}
        // protected AppiumDriver<AndroidElement> Driver => driver ?? throw new NullReferenceException("Driver not initialized.");
 
         [OneTimeSetUp]
         protected void OneTimeSetup()
         {
-           // test = Extent.CreateTest(TestContext.CurrentContext.Test.Name);
             string reportPath = @"D:\Reports\report.html";  
             _reporter = new ExtentSparkReporter(reportPath);
             Extent.AttachReporter(_reporter);
         }
 
         [SetUp]
-        //OPPO A16    ONOZSG4H8HSGW8HY
-        //TECNO SPARK 7   069793717K109606
-        //adb shell pm list packages | findstr holyquran
-        //adb shell cmd package resolve-activity --brief<package_name>
+       
 
         protected void Setup()
         {
             try
             {
-                // Initialize Appium Options
                 AppiumOptions capabilities = new AppiumOptions();
 
-                capabilities.PlatformName = "Android"; // Direct property for PlatformName
-                capabilities.PlatformVersion = "11";   // Direct property for PlatformVersion
-                capabilities.DeviceName = "Tecno Spark 7";  // Direct property for DeviceName
-                capabilities.AutomationName = AutomationName.AndroidUIAutomator2; // Direct property for AutomationName
+                capabilities.PlatformName = "Android"; 
+                capabilities.PlatformVersion = "11";   
+                capabilities.DeviceName = "Tecno Spark 7";  
+                capabilities.AutomationName = AutomationName.AndroidUIAutomator2; 
 
-                // Use AddAdditionalAppiumOption for additional options
-           //     capabilities.AddAdditionalAppiumOption("appPackage", "com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim");
-          //      capabilities.AddAdditionalAppiumOption("appActivity", "com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim/.ui.core.splash.SplashActivity");
                 capabilities.AddAdditionalAppiumOption("udid", "069793717K109606");  //ONOZSG4H8HSGW8HY
                 capabilities.AddAdditionalAppiumOption("newCommandTimeout", 300);
                 capabilities.AddAdditionalAppiumOption("ignoreHiddenApiPolicyError", true);
@@ -92,7 +84,7 @@ namespace NunitAppiumProj.Core
             try
             {
                 test.Log(Status.Info, $"Starting {testName}");
-                testSteps(); // Run your test logic here
+                testSteps();
                 test.Log(Status.Pass, $"{testName} completed successfully.");
             }
             catch (AssertionException ex)

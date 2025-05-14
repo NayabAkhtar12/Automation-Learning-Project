@@ -36,7 +36,7 @@ namespace NunitAppiumProj.Pages
             ReusableMethods.Click1(driver!, SelectReciterDropDown, "Clicking RecitersDropdown", test, " ", softAssert);
             Thread.Sleep(3000);
 
-            ReusableMethods.Click1(driver!, SelectReciter, "Clicking SelectReciter", test,"", softAssert);
+            ReusableMethods.Click1(driver!, SelectReciter, "Clicking Select Reciter", test, "Abd Al-Basit Mujawwad", softAssert);
             Thread.Sleep(3000);
 
             ReusableMethods.Click1(driver!, PlaySurah, "Clicking PlaySurah", test,"", softAssert);
@@ -54,8 +54,8 @@ namespace NunitAppiumProj.Pages
             ReusableMethods.Click1(driver!, GotoTranslationsection, "Clicking GotoTranslationsection", test,"", softAssert);
             Thread.Sleep(3000);
 
-        //    ReusableMethods.Click1(driver!, DownloadedSection, "Clicking DownloadedSection", test, softAssert);
-         //   Thread.Sleep(3000);
+         ReusableMethods.Click1(driver!, DownloadedSection, "Clicking DownloadedSection", test, "Downloaded", softAssert);
+           Thread.Sleep(1000);
 
             ReusableMethods.Click1(driver!, ViewTranslation, "Clicking ViewTranslation", test,"", softAssert);
             Thread.Sleep(3000);
@@ -80,11 +80,6 @@ namespace NunitAppiumProj.Pages
         private By SelectReciterDropDown => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivrecitersArrow");
         private By RepeatVerse => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/repeat");
         private By ViewList => By.Id(""); 
-        private By LanguageSave => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btnCacncel");
-        private By OnboardSkip => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btn_skip");
-        private By OnboardFinish => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/btn_next_step");
-        private By StoragePermissionAllow => By.Id("com.android.permissioncontroller:id/permission_allow_button");
-        private By LocationPermissionAllow => By.Id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
         private By SelectReciter => By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/tvReciterEng\" and @text=\"Abd Al-Basit Mujawwad\"]");
         private By NextAyah => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/forward");
         private By PrevAyah => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/before");

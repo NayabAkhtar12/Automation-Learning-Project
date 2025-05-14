@@ -26,22 +26,22 @@ namespace HolyQuran.Pages
             ReusableMethods.Click1(driver!, Menu, "Menu Button", test, "", softAssert);
             Thread.Sleep(3000);
 
-            ReusableMethods.Click1(driver!, PrivacyPolicy, "Privacy Policy", test, "", softAssert);
+            ReusableMethods.Click1(driver!, PrivacyPolicy, "Privacy Policy", test, "Privacy Policy", softAssert);
             Thread.Sleep(7000);
             ReusableMethods.Navigateback();
 
             ReusableMethods.Click1(driver!, Menu, "Menu Button", test, "", softAssert);
-            ReusableMethods.Click1(driver!, MoreApps, "More Apps", test, "", softAssert);
+            ReusableMethods.Click1(driver!, MoreApps, "More Apps", test, "More Apps", softAssert);
             Thread.Sleep(3000);
             ReusableMethods.Navigateback();
 
             ReusableMethods.Click1(driver!, Menu, "Menu Button", test, "", softAssert);
-            ReusableMethods.Click1(driver!, RateUs, "Rate Us", test, "", softAssert);
+            ReusableMethods.Click1(driver!, RateUs, "Rate Us", test, "Rate Us!", softAssert);
             Thread.Sleep(3000);
             ReusableMethods.Navigateback();
 
             ReusableMethods.Click1(driver!, Menu, "Menu Button", test, "", softAssert);
-            ReusableMethods.Click1(driver!, ExitApp, "Exit App", test, "", softAssert);
+            ReusableMethods.Click1(driver!, ExitApp, "Exit App", test, "Exit", softAssert);
             Thread.Sleep(3000);
             ReusableMethods.Click1(driver!, No, "Do not Exit App", test, "", softAssert);
 

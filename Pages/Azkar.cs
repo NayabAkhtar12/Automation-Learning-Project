@@ -20,8 +20,8 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, azkarMenu, "Azkar Menu", test, "", softAssert);
-            ReusableMethods.Click1(driver, Azkar_DuaSelection1, "Azkar Dua Selection - Upon waking up", test, "", softAssert);
+            ReusableMethods.Click1(driver, azkarMenu, "Azkar Menu", test, "Azkar", softAssert);
+            ReusableMethods.Click1(driver, Azkar_DuaSelection1, "Azkar Dua Selection - Upon waking up", test, "Upon waking up", softAssert);
             ReusableMethods.Click1(driver, AddtoBookmark, "Add to Bookmark", test, "", softAssert);
             ReusableMethods.Navigateback();
             ReusableMethods.Click1(driver, BooksMarksButton, "Bookmarks Button", test, "", softAssert);

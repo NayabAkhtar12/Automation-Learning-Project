@@ -31,7 +31,9 @@ public class SoftAssert
     {
         if (_errors.Count > 0)
         {
-            Assert.Fail("Soft assertion(s) failed:\n" + string.Join("\n", _errors));
+            string failureMessage = "Soft assertion(s) failed:\n" + string.Join("\n", _errors,"\n");
+            test?.Log(Status.Fail, failureMessage);
+            Assert.Fail(failureMessage);
         }
         else
         {

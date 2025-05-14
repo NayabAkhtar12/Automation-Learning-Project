@@ -18,7 +18,6 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            // Test flow using reusable methods
             ReusableMethods.Click1(driver!, MasjidFinderMenu!, "Masjid Finder Menu", test, "", softAssert);
 
             Thread.Sleep(5000); 

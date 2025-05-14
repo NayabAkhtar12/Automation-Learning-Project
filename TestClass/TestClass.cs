@@ -11,7 +11,7 @@ namespace NunitAppiumProj.TestClass
     public class TestClass : Base
     {
 
-        [Test, Order(1)]
+       // [Test, Order(1)]
         public void ALQuranStartup()
         {
             test = Extent.CreateTest("Quran Majeed Fist Session Report");
@@ -19,7 +19,7 @@ namespace NunitAppiumProj.TestClass
             Firstsession.QuranFirstSessionFlow();
 
         }
-        [Test, Order(11)]
+        [Test, Order(10)]
         public void ALQuran_1()
         {
             test = Extent.CreateTest("Quran Majeed Module Report");
@@ -30,7 +30,7 @@ namespace NunitAppiumProj.TestClass
         [Test, Order(2)]
         public void QiblaFinder_2()
         {
-            test = Extent.CreateTest("QiblaFinder Test Case");
+            test = Extent.CreateTest("Qibla Finder Test ");
             var QF = new QiblaFinder(driver!, test);
             QF.QiblaFinderT();
         }
@@ -40,7 +40,7 @@ namespace NunitAppiumProj.TestClass
           [Test, Order(3)]
         public void DigitalTasbeeh_3()
         {
-            test = Extent.CreateTest("DigitalTasbeeh  Report");
+            test = Extent.CreateTest("Digital Tasbeeh Report");
                var DT = new DigitalTasbeeh(driver!, test);
                 DT.DigitalTasbeehT();
         }
@@ -48,7 +48,7 @@ namespace NunitAppiumProj.TestClass
         [Test, Order(4)]
         public void Azkar_4()
         {
-            test = Extent.CreateTest("DigitalTasbeeh  Report");
+            test = Extent.CreateTest("Azkar Module Report");
 
               var  Azkar = new Azkar(driver!, test);
                 Azkar.AzkarTest();
@@ -67,7 +67,7 @@ namespace NunitAppiumProj.TestClass
         [Test, Order(6)]
         public void HijriCalender()
         {
-            test = Extent.CreateTest("Prayer Times test");
+            test = Extent.CreateTest("Hijri Calender test");
         
                 var Hijrical = new HijriCalender(driver, test);
                 Hijrical.CalenderTest();
@@ -103,7 +103,7 @@ namespace NunitAppiumProj.TestClass
         [Test, Order(8)]
         public void MasjidFinder()
         {
-            test = Extent.CreateTest("Prayer Times test");   
+            test = Extent.CreateTest("Masjid Finder test");   
                 test.Log(Status.Info, "Starting Masjid Finder");
                 var MasjidF = new Masjid(driver, test);
                 MasjidF.MasjidTest();
@@ -119,10 +119,10 @@ namespace NunitAppiumProj.TestClass
                 namesSection.NamesSectionTest();           
         }
 
-        [Test, Order(10)] 
+        [Test, Order(11)] 
         public void MenuandPremium()
         {
-            test = Extent.CreateTest("MenuandPremium");
+            test = Extent.CreateTest("Menu and Premium");
 
             test.Log(Status.Info, "Starting Names Section Test");
             var settings = new Settings((AndroidDriver)driver!, test);
