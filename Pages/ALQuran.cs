@@ -23,7 +23,7 @@ namespace NunitAppiumProj.Pages
       //    ReusableMethods.Click1(driver, Continuebtn, "Continue from splash Screen", test, softAssert);
             Thread.Sleep(1000);
 
-            ReusableMethods.Click1(driver, ALQuranMenu, "AL-Quran", test, "", softAssert);
+            ReusableMethods.Click1(driver, ALQuranMenu1, "AL-Quran", test, "Al-Quran", softAssert);
             ReusableMethods.Click1(driver, AlFatiha, "Surat Al-Fatiha", test, "Surat Al-Fatiha", softAssert);
             Thread.Sleep(1000);
         //    ReusableMethods.Swipe();
@@ -53,8 +53,10 @@ namespace NunitAppiumProj.Pages
 
             ReusableMethods.Click1(driver!, GotoTranslationsection, "Clicking GotoTranslationsection", test,"", softAssert);
             Thread.Sleep(3000);
+            ReusableMethods.Click1(driver!, AvailableforDownload, "Clicking AvailableforDownload", test, "", softAssert);
+            ReusableMethods.Click1(driver!, DownloadTranslation, "Clicking DownloadTranslation", test, "", softAssert);
 
-         ReusableMethods.Click1(driver!, DownloadedSection, "Clicking DownloadedSection", test, "Downloaded", softAssert);
+            ReusableMethods.Click1(driver!, DownloadedSection, "Clicking DownloadedSection", test, "Downloaded", softAssert);
            Thread.Sleep(1000);
 
             ReusableMethods.Click1(driver!, ViewTranslation, "Clicking ViewTranslation", test,"", softAssert);
@@ -75,6 +77,8 @@ namespace NunitAppiumProj.Pages
 
         // Element Locators
         private By ALQuranMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivquran");
+        private By ALQuranMenu1 => By.XPath("//android.widget.TextView[@text=\"Al-Quran\"]");
+
         private By AlFatiha => By.XPath("//android.widget.TextView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/soraName\" and @text=\"Surat Al-Fatiha\"]");
         private By PlaySurah => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/play");
         private By SelectReciterDropDown => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivrecitersArrow");

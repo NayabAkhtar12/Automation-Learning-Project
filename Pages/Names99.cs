@@ -18,7 +18,7 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver!, Namesnine!, "Names Section Menu", test, "", softAssert);
+            ReusableMethods.Click1(driver!, Namesnine!, "Names Section Menu", test, "99 Names", softAssert);
 
             // Read Allah Names
             ReusableMethods.Click1(driver!, ReadNamesAllah!, "Read Names of Allah", test, "", softAssert);
@@ -49,7 +49,9 @@ namespace NunitAppiumProj.Pages
         }
 
         // Element Locators
-        private By Namesnine => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivnamesnabi");
+        private By Namesnine1 => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivnamesnabi");
+        private By Namesnine => By.XPath("//android.widget.TextView[@text=\"99 Names\"]");
+
         private By ReadNamesHusna => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_read_nabi_names");
         private By ListenNamesNabi => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_listen_nabi_names");
         private By ReadNamesAllah => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/iv_read_asma");

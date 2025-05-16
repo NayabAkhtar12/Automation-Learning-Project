@@ -19,7 +19,7 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, prayerTimesMenu, "Prayer Times Menu", test, "", softAssert);
+            ReusableMethods.Click1(driver, prayerTimesMenu, "Prayer Times Menu", test, "Prayer Times", softAssert);
             ReusableMethods.Click1(driver, PrayerTimeNotification, "Prayer Time Notification", test, "", softAssert);
 
             Thread.Sleep(3000);
@@ -29,7 +29,8 @@ namespace NunitAppiumProj.Pages
         }
 
         // Element Locators
-        private By prayerTimesMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivprayers");
+        private By prayerTimesMenu1 => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivprayers");
+        private By prayerTimesMenu => By.XPath("//android.widget.TextView[@text=\"Prayer Times\"]");
         private By PrayerTimeNotification => By.XPath("(//android.widget.ImageView[@resource-id='com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ib_notification'])[3]");
     }
 }

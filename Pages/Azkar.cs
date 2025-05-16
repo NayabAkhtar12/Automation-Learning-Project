@@ -36,7 +36,8 @@ namespace NunitAppiumProj.Pages
         }
 
         // Element Locators
-        private By azkarMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivazkar");
+        private By azkarMenu1 => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivazkar");
+        private By azkarMenu => By.XPath("//android.widget.TextView[@text=\"Azkar\"]");
 
         private By Azkar_DuaSelection1 => By.XPath("//android.widget.TextView[@resource-id='com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/txtDuaName' and @text='Upon waking up']");
 

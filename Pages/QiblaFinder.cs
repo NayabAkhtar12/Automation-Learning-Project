@@ -20,7 +20,7 @@ namespace NunitAppiumProj.Pages
         {
                SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver, QiblaFindermenu, "Menu from Home Screen", test, "", softAssert);
+            ReusableMethods.Click1(driver, QiblaFindermenu, "Menu from Home Screen", test, "Qibla Finder", softAssert);
                 ReusableMethods.Click1(driver, SelectCompassMenu, "Select Compass Menu", test, "", softAssert);
                 ReusableMethods.Click1(driver, Theme, "Theme", test, "", softAssert);
                 Thread.Sleep(2000);
@@ -32,7 +32,8 @@ namespace NunitAppiumProj.Pages
 
 
         //Element Locator for Surah Location
-        private By QiblaFindermenu = By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivqibla");
+        private By QiblaFindermenu1 = By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivqibla");
+        private By QiblaFindermenu = By.XPath("//android.widget.TextView[@text=\"Qibla Finder\"]");
         public By SelectCompassMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivChangeTasbeeh");
         public By Theme => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/clqibla3");
     }

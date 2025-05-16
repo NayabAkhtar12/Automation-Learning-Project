@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "D:\\Automation-Projects\\PracticeApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\hajjandumrahsection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\hajjandumrahsection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\reusablemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\reusablemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\masjid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\masjid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\hijricalender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\hijricalender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\hajjandumrahsection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\hajjandumrahsection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\testclass\\testclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:testclass\\testclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\alquran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\alquran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\qiblafinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\qiblafinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\prayertimes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\prayertimes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\firstsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\firstsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\digitaltasbeeh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,18 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\azkar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\azkar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\pages\\alquran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:pages\\alquran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\core\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:core\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|d:\\automation-projects\\practiceapplication\\testclass\\testclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E457D1E1-B7CB-447D-AA90-BCF7F6786534}|NunitAppiumProj.csproj|solutionrelative:testclass\\testclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,46 +50,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Azkar.cs",
-              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\Azkar.cs",
-              "RelativeDocumentMoniker": "Pages\\Azkar.cs",
-              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\Azkar.cs",
-              "RelativeToolTip": "Pages\\Azkar.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "TestClass.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\TestClass\\TestClass.cs",
+              "RelativeDocumentMoniker": "TestClass\\TestClass.cs",
+              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\TestClass\\TestClass.cs",
+              "RelativeToolTip": "TestClass\\TestClass.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAIwE0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T09:42:28.396Z",
+              "WhenOpened": "2025-05-16T12:19:43.541Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ALQuran.cs",
-              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\ALQuran.cs",
-              "RelativeDocumentMoniker": "Pages\\ALQuran.cs",
-              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\ALQuran.cs",
-              "RelativeToolTip": "Pages\\ALQuran.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAA8wFgAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T09:41:44.526Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Base.cs",
-              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Core\\Base.cs",
-              "RelativeDocumentMoniker": "Core\\Base.cs",
-              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Core\\Base.cs",
-              "RelativeToolTip": "Core\\Base.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAIwFYAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T09:39:58.375Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
@@ -95,79 +77,114 @@
               "RelativeDocumentMoniker": "Pages\\ReusableMethods.cs",
               "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\ReusableMethods.cs",
               "RelativeToolTip": "Pages\\ReusableMethods.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAwwFkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAqwEkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T07:57:39.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TestClass.cs",
-              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\TestClass\\TestClass.cs",
-              "RelativeDocumentMoniker": "TestClass\\TestClass.cs",
-              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\TestClass\\TestClass.cs",
-              "RelativeToolTip": "TestClass\\TestClass.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T07:56:24.876Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Settings.cs",
-              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\Settings.cs",
-              "RelativeDocumentMoniker": "Pages\\Settings.cs",
-              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\Settings.cs",
-              "RelativeToolTip": "Pages\\Settings.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowDIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T07:55:06.574Z",
+              "WhenOpened": "2025-05-16T12:15:19.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Masjid.cs",
-              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\Masjid.cs",
-              "RelativeDocumentMoniker": "Pages\\Masjid.cs",
-              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\Masjid.cs",
-              "RelativeToolTip": "Pages\\Masjid.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Title": "HijriCalender.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\HijriCalender.cs",
+              "RelativeDocumentMoniker": "Pages\\HijriCalender.cs",
+              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\HijriCalender.cs",
+              "RelativeToolTip": "Pages\\HijriCalender.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T07:53:43.068Z",
+              "WhenOpened": "2025-05-16T11:35:29.087Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "HajjandUmrahSection.cs",
               "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\HajjandUmrahSection.cs",
               "RelativeDocumentMoniker": "Pages\\HajjandUmrahSection.cs",
               "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\HajjandUmrahSection.cs",
               "RelativeToolTip": "Pages\\HajjandUmrahSection.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCwAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T07:50:35.91Z",
+              "WhenOpened": "2025-05-16T11:35:04.666Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
+              "Title": "FirstSession.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\FirstSession.cs",
+              "RelativeDocumentMoniker": "Pages\\FirstSession.cs",
+              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\FirstSession.cs",
+              "RelativeToolTip": "Pages\\FirstSession.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T11:33:57.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "DigitalTasbeeh.cs",
               "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\DigitalTasbeeh.cs",
               "RelativeDocumentMoniker": "Pages\\DigitalTasbeeh.cs",
               "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\DigitalTasbeeh.cs",
               "RelativeToolTip": "Pages\\DigitalTasbeeh.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T07:49:51.885Z",
+              "WhenOpened": "2025-05-16T11:33:49.477Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Azkar.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\Azkar.cs",
+              "RelativeDocumentMoniker": "Pages\\Azkar.cs",
+              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\Azkar.cs",
+              "RelativeToolTip": "Pages\\Azkar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T11:33:40.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ALQuran.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\ALQuran.cs",
+              "RelativeDocumentMoniker": "Pages\\ALQuran.cs",
+              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\ALQuran.cs",
+              "RelativeToolTip": "Pages\\ALQuran.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwE8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T11:33:16.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QiblaFinder.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\QiblaFinder.cs",
+              "RelativeDocumentMoniker": "Pages\\QiblaFinder.cs",
+              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\QiblaFinder.cs",
+              "RelativeToolTip": "Pages\\QiblaFinder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T11:32:29.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PrayerTimes.cs",
+              "DocumentMoniker": "D:\\Automation-Projects\\PracticeApplication\\Pages\\PrayerTimes.cs",
+              "RelativeDocumentMoniker": "Pages\\PrayerTimes.cs",
+              "ToolTip": "D:\\Automation-Projects\\PracticeApplication\\Pages\\PrayerTimes.cs",
+              "RelativeToolTip": "Pages\\PrayerTimes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T11:31:41.509Z",
+              "EditorCaption": ""
             }
           ]
         }

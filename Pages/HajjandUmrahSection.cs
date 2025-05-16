@@ -19,6 +19,8 @@ namespace NunitAppiumProj.Pages
             SoftAssert softAssert = new SoftAssert();
 
             ReusableMethods.Click1(driver, HajjUmrahMenu, "Hajj and Umrah Menu", test, "", softAssert);
+            //ReusableMethods.Click1(driver, HajjUmrahMenu, "Hajj and Umrah Menu", test, "Hajj and Umrah", softAssert);
+
             ReusableMethods.Click1(driver, HajjGuideMenu, "Hajj Guide Menu", test, "", softAssert);
 
             ReusableMethods.Click1(driver, HajjGuideDay1, "8th of Dhul Hijjah", test, "8th of Dhul Hijjah", softAssert);
@@ -125,6 +127,8 @@ namespace NunitAppiumProj.Pages
 
         // Element Locators
         private By HajjUmrahMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivnameshusna");
+       // private By HajjUmrahMenu => By.XPath("//android.widget.TextView[@text=\"Hajj and Umrah\r\nSection\"]");
+
         private By HajjGuideMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivhajj");
         private By HajjGuideDay1 => By.XPath("//android.widget.TextView[@text='8th of Dhul Hijjah']");
         private By HajjGuideDay2 => By.XPath("//android.widget.TextView[@text='9th of Dhul Hijjah']");

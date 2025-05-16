@@ -75,7 +75,7 @@ namespace NunitAppiumProj.Pages
                 }
 
                 string actualText = element.Text;
-           //      test?.Log(Status.Info, $"Actual text of {ElementName}: '{actualText}'");
+              test?.Log(Status.Info, $"Actual text of {ElementName}: '{actualText}'");
                 if (!string.IsNullOrWhiteSpace(expectedText))
                 {
                     softAssert.Contains(expectedText, actualText, $"Text mismatch before clicking {ElementName}");

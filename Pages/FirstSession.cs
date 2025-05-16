@@ -25,15 +25,17 @@ namespace NunitAppiumProj.Pages
             ReusableMethods.Click1(driver, LanguageSave, "LanguageSave", test, "", softAssert);
             ReusableMethods.Click1(driver, StoragePermissionAllow, "StoragePermissionAllow", test,"", softAssert);
             ReusableMethods.Click1(driver, LocationPermissionAllow, "StoragePermissionAllow", test,"", softAssert);
-            ReusableMethods.Click1(driver, ALQuranMenu, "AL-Quran", test, "", softAssert);
+            ReusableMethods.Click1(driver, ALQuranMenu1, "AL-Quran", test, "Al-Quran", softAssert);
             ReusableMethods.Click1(driver, Downloadinbackground, "Download in Background", test,"", softAssert);
 
          //   driver.Navigate().Back();
             softAssert.AllAsserts(test);
         }
-     
+
 
         // Element Locators
+        private By ALQuranMenu1 => By.XPath("//android.widget.TextView[@text=\"Al-Quran\"]");
+
         private By ALQuranMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivquran");
         private By Continue => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/start_button");
         private By SelectLanguage => By.XPath("//androidx.recyclerview.widget.RecyclerView[@resource-id=\"com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/recycler_view\"]/android.view.ViewGroup[1]");

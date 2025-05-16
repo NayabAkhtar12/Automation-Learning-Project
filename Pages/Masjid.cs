@@ -18,7 +18,7 @@ namespace NunitAppiumProj.Pages
         {
             SoftAssert softAssert = new SoftAssert();
 
-            ReusableMethods.Click1(driver!, MasjidFinderMenu!, "Masjid Finder Menu", test, "", softAssert);
+            ReusableMethods.Click1(driver!, MasjidFinderMenu!, "Masjid Finder Menu", test, "Masjid Finder", softAssert);
 
             Thread.Sleep(5000); 
             ReusableMethods.Navigateback();
@@ -27,6 +27,8 @@ namespace NunitAppiumProj.Pages
         }
 
         // Element Locators
-        private By MasjidFinderMenu => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmasjid");
+        private By MasjidFinderMenu1 => By.Id("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/ivmasjid");
+        private By MasjidFinderMenu => By.XPath("//android.widget.TextView[@text=\"Masjid Finder\"]");
+
     }
 }
